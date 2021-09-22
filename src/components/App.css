@@ -1,0 +1,134 @@
+.bg_image_home{
+    background-image: url('back.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.bg_image_home_mobile{
+  background-image: url('back.png');
+  height:100%;
+  width:100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg_image_contact{
+    background-image: url('contact.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .bg_image_contact_mobile{
+    background-image: url('contact.png');
+    height:120vh;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_about{
+    background-image: url('contact.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_about_mobile{
+    background-image: url('contact.png');
+    height:100%;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_register{
+    background-image: url('register.png');
+    width: 100vw;
+    height: 110vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_register_mobile{
+    background-image: url('register.png');
+    height:145vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_team{
+    background-image: url('contact.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .bg_image_team_mobile{
+    background-image: url('contact.png');
+    height:100%;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_events{
+    background-image: url('contact.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .bg_image_events_mobile{
+    background-image: url('contact.png');
+    height:100%;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg_image_payment{
+    background: linear-gradient(-45deg, #F25E74, #FF8884, #026178, #0682A6, #34A1C7);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 100vh;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .bg_image_payment_mobile{
+    background: linear-gradient(-45deg, #F25E74, #FF8884, #026178, #0682A6, #34A1C7);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 120vh;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+ 

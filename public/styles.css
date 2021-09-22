@@ -1,0 +1,181 @@
+.navbar > .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0.5rem 2rem 0 0rem;
+  }
+  
+  .navbar {
+    margin: 0;
+    padding: 0.5rem 2rem 0 1rem;
+  }
+
+  .navLinks{
+  color: white !important;
+  font-size: 170%;
+  margin-right: 2rem
+  }
+/* React navbar styling */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    /* Height of the footer */
+    background: #6cf;
+}
+/* Footer */
+#footer-date {
+    font-size: 250%;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color:aliceblue;
+}
+#footer-month {
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+    
+}
+/* Footer date-section */
+
+.inline {
+    display: inline-block;
+    /* margin: 1rem;
+    margin-left: 2%; */
+    margin-top: 3%;
+}
+.title {
+    color: white;
+    font-size: 500%;
+    font-family:'Aileron',sans-serif;
+    text-align: left;
+}    
+.wrap h2 {
+    display: table-cell;
+    vertical-align: middle;
+}
+.wrap {
+    display: table;
+    height: 6.25rem;
+    width: 30rem;
+    /* padding: 0.63rem; */
+    /* keep commented for phone, needed for pc */
+}
+.wrap h1 {
+    display: table-cell;
+    vertical-align: middle;
+}
+.sub {
+    display: block;
+    color: darkgray;
+    font-family: 'AileronReg', sans-serif;
+}
+.becomeMember{
+    margin: 2rem auto !important;
+    /* padding: auto 5% !important; */
+    width:100% !important;
+}
+.title2{
+    font-size:500%;
+    /* 6rem before */
+}
+.text{
+    padding-left: 9.7%;
+}
+
+/* Text content */
+
+.insta,.twitter,.linkedin{
+    width: 3.125rem;
+    height: 3.125rem;
+    background-size: 100%;
+    background-position:  center;
+    justify-content: center;
+    margin:auto;
+}
+.insta{
+
+    background-image: url('img/static.gif');
+    
+
+}
+.insta:hover {
+    background-image: url('img/insta.gif');
+}
+.twitter{
+
+    background-image: url('img/static2.gif');
+
+}
+.twitter:hover{
+    background-image: url('img/twitter.gif');
+}
+.linkedin{
+
+  background-image: url('img/static3.gif');
+
+}
+.linkedin:hover{
+  background-image: url('img/linkedin.gif');
+}
+.socials{
+    text-align: center;
+  }
+  /* Socials section */
+
+.navbar-brand {
+    margin-left: 2%;
+}
+#navbarNav {
+    margin-right: 5%;
+    justify-content: flex-end;
+}
+/* Navbar related */
+
+.arrow-down{
+    margin:3rem auto 1rem auto !important;
+    display:block !important;
+    height:3rem !important;
+    width:3rem !important;
+    color:aliceblue;
+}
+.arrow-up{
+    margin:0 auto 2rem auto !important;
+    padding:0 auto !important;
+    display:block !important;
+    height:3rem !important;
+    width:3rem !important;
+    color:aliceblue;
+}
+/* arrow-down arrow-up button related(both have same CSS) */
+
+.register{
+    margin:5% auto 5% auto !important;
+    display:block !important;
+    background:linear-gradient(180deg, #8D8C8C 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    opacity: 85%;
+    border-radius: 1px;
+}
+/*become member related CSS */
+
+.sendMessage{
+    width:46.4rem;
+    height:5rem;
+}
+.mb-3{
+    font-family: Noto Sans, sans-serif;
+  }
+  /* Contact us page related */
+
+  .svg_icons{
+    transform: scale(1.8);
+  }
+.registerformbutton{
+    width:39.6rem !important;
+    height:5rem !important;
+}
+/* register page button related */
+html,body,#root{
+    height: 100%;
+}
