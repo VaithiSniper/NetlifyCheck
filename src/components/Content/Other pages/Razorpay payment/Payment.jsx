@@ -11,6 +11,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/styles';
 import Container from '@mui/material/Container';
+import axios from 'axios'
 //material-ui
 require('dotenv').config();
 //dotenv
@@ -53,18 +54,21 @@ async function displayRazorPay(){
   if(!res)
   alert('Error loading SDK. Are you online?');
   
-  const data = await fetch(`https://sdi-backend.vercel.app/payment`, { method: 'POST', mode: 'cors' }).then((t) =>
-			t.json()
-		)
+  // const data = await fetch(`https://sdi-backend.vercel.app/payment`, { method: 'POST', mode: 'cors' }).then((t) =>
+	// 		t.json()
+	// 	)
 
+    const data = axios.post('https://sdi-backend.vercel.app/payment').then((t) =>
+t.json()
+)
 
   var options = {
-    key: process.env.KEY_ID, // Enter the Key ID generated from the Dashboard
+    key: 'rzp_test_xdled9rhtMMoAG', // Enter the Key ID generated from the Dashboard
     amount: '5000', 
     currency: 'INR',
     name: "SDI Club",
     description: "Registration",
-    image: `https://sdi-backend.vercel.app/logo`,
+    image: `https://user-images.githubusercontent.com/58522375/134403348-e0b661c2-a75b-4013-a8fc-fa7957e2cb9a.png`,
     order_id: data.id,
     handler: function (response){
         alert(response.razorpay_payment_id);

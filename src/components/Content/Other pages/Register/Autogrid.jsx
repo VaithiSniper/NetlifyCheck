@@ -7,6 +7,7 @@ import { useMediaPredicate } from "react-media-hook";
 import FormHeading from '../../Forms/FormHeading';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
+import axios from 'axios';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -123,14 +124,26 @@ const classes = useStyles(); //styles for Paper component
         setTimeout(() => {
           
           //values are received here
-          fetch('https://sdi-backend.vercel.app/register/formData',
-          {
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(values, null, 2)
-          }).then(()=>{
-            console.log("posted")
-          })
+          let config = {
+          headers: {
+            header1:{'Content-Type':'application/json'}
+         }
+         }
+
+          let data = {
+          // eslint-disable-next-line no-restricted-globals
+          'HTTP_CONTENT_LANGUAGE': self.language
+          }
+
+axios.post('https://sdi-backend.vercel.app/register/formData',JSON.stringify(values, null, 2), data, config).then(console.log("posted"))
+          // fetch('https://sdi-backend.vercel.app/register/formData',
+          // {
+          //   method:'POST',
+          //   headers:{'Content-Type':'application/json'},
+          //   body: JSON.stringify(values, null, 2)
+          // }).then(()=>{
+          //   console.log("posted")
+          // })
           setSubmitting(false);
 
         }, 1000);
