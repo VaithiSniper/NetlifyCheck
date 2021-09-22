@@ -58,7 +58,7 @@ t.json()
 )
 
   var options = {
-    key: process.env.KEY_ID, // Enter the Key ID generated from the Dashboard
+    key: 'rzp_live_wKRYG1LaNRgY2h', // Enter the Key ID generated from the Dashboard
     amount: '5000', 
     currency: 'INR',
     name: "SDI Club",
