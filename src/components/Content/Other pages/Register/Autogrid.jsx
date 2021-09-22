@@ -136,14 +136,6 @@ const classes = useStyles(); //styles for Paper component
           }
 
 axios.post('https://sdi-backend.vercel.app/register/formData',JSON.stringify(values, null, 2), data, config).then(console.log("posted"))
-          // fetch('https://sdi-backend.vercel.app/register/formData',
-          // {
-          //   method:'POST',
-          //   headers:{'Content-Type':'application/json'},
-          //   body: JSON.stringify(values, null, 2)
-          // }).then(()=>{
-          //   console.log("posted")
-          // })
           setSubmitting(false);
 
         }, 1000);
