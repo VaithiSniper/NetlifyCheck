@@ -63,7 +63,7 @@ function PageContent() {
             <div className="inline">
             <div className="combine"> 
             <div className="wrap">
-            <h1 className="title title1">Student Developers Initiative.</h1>
+            <h1 className="title title1">Student <br/> Developers <br/> Initiative.</h1>
             </div>
             <div className="sub">
             <h2>&lt;We dream tech /&gt;</h2>
@@ -83,7 +83,7 @@ function PageContent() {
     <div className="inline">
     <div className="combine"> 
     <div className="wrap">
-    <h1 className="title title1">Student Developers Initiative.</h1>
+    <h1 className="title title1">Student <br/> Developers <br/> Initiative.</h1>
     </div>
     <div className="sub">
     <h2>&lt;We dream tech /&gt;</h2>

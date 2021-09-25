@@ -170,12 +170,12 @@ axios.post('https://sdi-backend.vercel.app/register/formData',JSON.stringify(val
          </Grid>
          {/* Padding grid */}
          <Grid item xs={12} md={6} lg={3}>
-          <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
+          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
           <Field  name="fName" as="input"  placeholder="First Name" style={smallerThan1000?smallBoxesStyling:largeBoxesStyling1}/>
           </Paper>
          </Grid>
          <Grid item xs={12} md={6} lg={3}>
-          <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
+          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
            <Field as="input"  name="lName" placeholder="Last Name" style={smallerThan1000?smallBoxesStyling:largeBoxesStyling1}/>
           </Paper>
          </Grid>

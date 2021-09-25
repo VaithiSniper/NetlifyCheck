@@ -57,8 +57,8 @@
 }
 .wrap {
     display: table;
-    height: 6.25rem;
-    width: 30rem;
+    /* height: 6.25rem;
+    width: 30rem; */
     /* padding: 0.63rem; */
     /* keep commented for phone, needed for pc */
 }
@@ -80,9 +80,9 @@
     font-size:500%;
     /* 6rem before */
 }
-/* .text{
+.text{
     padding-left: 9.7%;
-} */
+}
 
 /* Text content */
 
