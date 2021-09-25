@@ -57,9 +57,9 @@
 }
 .wrap {
     display: table;
-    /* height: 6.25rem;
-    width: 30rem; */
-    /* padding: 0.63rem; */
+    height: 6.25rem;
+    width: 30rem;
+    padding: 0.63rem;
     /* keep commented for phone, needed for pc */
 }
 .wrap h1 {
