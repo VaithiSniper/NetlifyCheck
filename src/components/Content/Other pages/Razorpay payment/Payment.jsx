@@ -1,10 +1,6 @@
-import React,{useState} from "react";
+import React from "react";
 //react
 // eslint-disable-next-line no-unused-vars
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore"; 
-//firestore
 import Button from '@mui/material/Button';
 import PaymentIcon from '@mui/icons-material/Payment';
 import Card from '@mui/material/Card';
@@ -16,26 +12,6 @@ import axios from 'axios'
 require('dotenv').config();
 //dotenv
 
-const firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId,
-  measurementId: process.env.measurementId,
-};
-
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore();
-
-//firebasesetup
-
- function handleSucess()
-{
-  
-//send to this backend to confirm push to db 
-}
 
 const MyButton = styled(Button)({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -58,7 +34,7 @@ t.json()
 )
 
   var options = {
-    key: 'rzp_live_wKRYG1LaNRgY2h', // Enter the Key ID generated from the Dashboard
+    key: 'rzp_test_ImFdA7jRziHClS', // Enter the Key ID generated from the Dashboard
     amount: '5000', 
     currency: 'INR',
     name: "SDI Club",
@@ -66,11 +42,9 @@ t.json()
     image: `https://user-images.githubusercontent.com/58522375/134403348-e0b661c2-a75b-4013-a8fc-fa7957e2cb9a.png`,
     order_id: data.id,
     handler: function (response){
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
-        handleSucess()
-        setTimeout(function(){window.location.replace('/payment/success');},10000)
+        const payment_ID = response.razorpay_payment_id;
+        //keep payment_id in database
+        setTimeout(function(){window.location.replace('/payment/success');},5000)
     },
     prefill: {
         "name": "Example",
@@ -104,7 +78,6 @@ function loadRazorPay()
 //function to load razorpay script
 
 function PaymentPortal() {
-const [sucess,setSuccess]= useState(false);
   return (
         <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
