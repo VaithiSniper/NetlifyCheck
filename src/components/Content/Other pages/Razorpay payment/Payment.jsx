@@ -7,7 +7,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/styles';
 import Container from '@mui/material/Container';
-import axios from 'axios'
+import axios from 'axios';
 //material-ui
 require('dotenv').config();
 //dotenv
@@ -29,7 +29,7 @@ async function displayRazorPay(){
   const res = await loadRazorPay();
   if(!res)
   alert('Error loading SDK. Are you online?');
-    const data = axios.post('https://sdi-backend.vercel.app/payment').then((t) =>
+    const data = axios.post('http://localhost:5000/payment').then((t) =>
 t.json()
 )
 
@@ -42,8 +42,9 @@ t.json()
     image: `https://user-images.githubusercontent.com/58522375/134403348-e0b661c2-a75b-4013-a8fc-fa7957e2cb9a.png`,
     order_id: data.id,
     handler: function (response){
-        const payment_ID = response.razorpay_payment_id;
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         //keep payment_id in database
+        
         setTimeout(function(){window.location.replace('/payment/success');},5000)
     },
     prefill: {

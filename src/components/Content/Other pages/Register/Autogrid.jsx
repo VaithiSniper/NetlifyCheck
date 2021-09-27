@@ -34,12 +34,15 @@ const MyButton = styled(Button)({
 //material-ui button styling
 
 
+
+
 export default function AutoGrid() {
 
   const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//media-query hook  
   const largeBoxesStyling1 = {display:"flex",left:"0",width:"70%"}//for >1000px styling for fName, Lname
   const largeBoxesStyling2 = {display:"flex",left:"0",width:"100%"}//for >1000px styling for USN,mobile,domain,email ID
   const smallBoxesStyling = {width:"70%"}//for <1000px styling for fName, Lname
+  //Boxes styling for different fields
 
 const classes = useStyles(); //styles for Paper component
   return (
@@ -74,36 +77,6 @@ const classes = useStyles(); //styles for Paper component
           errors.email = 'Invalid email address';
 
         }
-        if (!values.fName) {
-
-          errors.fName = 'Required';
-
-        }
-        if (!values.lName) {
-
-          errors.lName = 'Required';
-
-        }
-        if (!values.USN) {
-
-          errors.USN = 'Required';
-
-        }
-        if (!values.semester) {
-
-          errors.semester = 'Required';
-
-        }
-        if (!values.section) {
-
-          errors.section = 'Required';
-
-        }
-        if (!values.domainOfInterest) {
-
-          errors.domainOfInterest = 'Required';
-
-        }
         if (!values.phone) {
 
           errors.phone = 'Required';
@@ -120,28 +93,30 @@ const classes = useStyles(); //styles for Paper component
       }}
 
       onSubmit={(values, { setSubmitting }) => {
-
-        setTimeout(() => {
           
-          //values are received here
-          let config = {
-          headers: {
-            header1:{'Content-Type':'application/json'}
-         }
-         }
+        //   //values are received here
+        //   let config = {
+        //   headers: {
+        //     header1:{'Content-Type':'application/json'}
+        //  }
+        //  }
 
-          let data = {
-          // eslint-disable-next-line no-restricted-globals
-          'HTTP_CONTENT_LANGUAGE': self.language
-          }
+        //   let data = {
+        //   // eslint-disable-next-line no-restricted-globals
+        //   'HTTP_CONTENT_LANGUAGE': self.language
+        //   }
+        //   console.log(JSON.stringify(values, null, 2))
+        //   axios.post('http://localhost:5000/register/formData',JSON.stringify(values, null, 2)).then(console.log("posted"))
+        //   setSubmitting(false);
 
-axios.post('https://sdi-backend.vercel.app/register/formData',JSON.stringify(values, null, 2), data, config).then(console.log("posted"))
-          setSubmitting(false);
-
-        }, 1000);
-        //sent to backend
-        // eslint-disable-next-line no-restricted-globals
-        window.location.replace('/payment');
+        // }, 10000);
+        // //sent to backend
+        // // eslint-disable-next-line no-restricted-globals
+        // window.location.replace('/payment');
+        setTimeout(() => {
+alert(JSON.stringify(values, null, 2));
+setSubmitting(false);
+}, 10000);
       }}
 
     >
@@ -292,3 +267,4 @@ axios.post('https://sdi-backend.vercel.app/register/formData',JSON.stringify(val
   </div>
  );
 }
+
