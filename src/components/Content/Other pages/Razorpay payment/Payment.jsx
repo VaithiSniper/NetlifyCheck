@@ -29,7 +29,7 @@ async function displayRazorPay(){
   const res = await loadRazorPay();
   if(!res)
   alert('Error loading SDK. Are you online?');
-    const data = axios.post('http://localhost:5000/payment').then((t) =>
+    const data = axios.post('https://sdi-backend.vercel.app/payment').then((t) =>
 t.json()
 )
 

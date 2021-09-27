@@ -1,13 +1,16 @@
 import React from "react";
+//React
 import { makeStyles, createStyles} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useMediaPredicate } from "react-media-hook";
 import FormHeading from '../../Forms/FormHeading';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
-import axios from 'axios';
+//Material UI related
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+//Formik components
+import { useMediaPredicate } from "react-media-hook";
+//react hook for media queries
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -93,30 +96,21 @@ const classes = useStyles(); //styles for Paper component
       }}
 
       onSubmit={(values, { setSubmitting }) => {
-          
-        //   //values are received here
-        //   let config = {
-        //   headers: {
-        //     header1:{'Content-Type':'application/json'}
-        //  }
-        //  }
-
-        //   let data = {
-        //   // eslint-disable-next-line no-restricted-globals
-        //   'HTTP_CONTENT_LANGUAGE': self.language
-        //   }
-        //   console.log(JSON.stringify(values, null, 2))
-        //   axios.post('http://localhost:5000/register/formData',JSON.stringify(values, null, 2)).then(console.log("posted"))
-        //   setSubmitting(false);
-
-        // }, 10000);
-        // //sent to backend
-        // // eslint-disable-next-line no-restricted-globals
-        // window.location.replace('/payment');
+        //values are received here
+        //using setTimeout to give formik time to fetch data
         setTimeout(() => {
-alert(JSON.stringify(values, null, 2));
+fetch("https://sdi-backend.vercel.app/register/formData", {
+  method:"POST",
+  headers: {
+        "Content-Type": "application/json",
+        // "Content-Type": "application/x-www-form-urlencoded",
+    },
+  body:JSON.stringify(values, null, 2)
+}).then(console.log("posted"));
 setSubmitting(false);
-}, 10000);
+}, 5000);
+        //after 5s, page shift to payment
+
       }}
 
     >
@@ -247,19 +241,11 @@ setSubmitting(false);
          </Grid>
          <Grid item xs={12} lg={6}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
-          <MyButton type="submit" variant="outlined" style ={{width:"90%"}} href="/payment" disabled={isSubmitting || !isValid || !dirty}>Submit</MyButton>
+          <MyButton type="submit" variant="outlined" style ={{width:"90%"}} disabled={isSubmitting || !isValid || !dirty}>Submit</MyButton>
           </Paper>
          </Grid>
        </Grid>
        </Form>
-
-     
-       
-         
-          
-     
-        
-        
       )}
 
     </Formik>
