@@ -53,21 +53,17 @@ t.json()
     description: "Registration",
     image: `https://user-images.githubusercontent.com/58522375/134403348-e0b661c2-a75b-4013-a8fc-fa7957e2cb9a.png`,
     order_id: data.id,
-    handler:async function (response){
-      const docRef = doc(db, "users", "vaithi.genghiskhan@gmail.com");
+    handler:
+      async function (response){
+      const docRef = doc(db, "users", "ullasrajesh23@gmail.com");
       console.log(docRef);
       await updateDoc(docRef, {paymentStatus: true});
       //update current user's payment status to true
-      
-const q = query(collection(db, "users"), where("paymentStatus", "==", false));
-const querySnapshot = await getDocs(q);
-console.log(querySnapshot);
-querySnapshot.forEach(async(doc) => {
-  await deleteDoc(doc.ref)
-});
-//now to delete all documents with payment status == false
-
-
+      falsePurger();
+      //to clear documents with fasle
+      setTimeout(()=>{
+        window.location.replace("/payment/success");
+      },5000);
 //switch to payment success page
     },
     prefill: {
@@ -125,5 +121,16 @@ function PaymentPortal() {
 }
 //Payment component
 
+async function falsePurger()
+{
+  const q = query(collection(db, "users"), where("paymentStatus", "==", false));
+const querySnapshot = await getDocs(q);
+console.log(querySnapshot);
+querySnapshot.forEach(async(doc) => {
+  await deleteDoc(doc.ref)
+});
+//now to delete all documents with payment status == false
+
+}
 
 export default PaymentPortal;

@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/styles';
 import Button from '@mui/material/Button';
+//material-ui
 
 const MyButton = styled(Button)({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -18,6 +19,7 @@ const MyButton = styled(Button)({
 //material-ui button styling
 
 function PaymentSuccess(){
+
     return(
         <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center",padding:"10%"}}>
