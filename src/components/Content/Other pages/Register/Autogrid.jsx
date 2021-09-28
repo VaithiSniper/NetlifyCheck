@@ -110,27 +110,15 @@ const classes = useStyles(); //styles for Paper component
         //values are received here
         //using setTimeout to give formik time to fetch data
         setTimeout(() => {
-
+        const userData = (JSON.stringify(values, null, 2));
           try {
   const docRef = addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
+    userData
   });
   console.log("Document written with ID: ", docRef.id);
 } catch (e) {
   console.error("Error adding document: ", e);
 }
-// fetch("https://sdi-backend.vercel.app/register/formData", {
-//   method:"POST",
-//   mode:"cors",
-//   headers: {
-//         "Content-Type": "application/json",
-//         // "Content-Type": "application/x-www-form-urlencoded",
-//         // "Origin":"https://sdi-backend.vercel.app"
-//     },
-//   body:JSON.stringify(values, null, 2)
-// }).then(console.log("posted"));
 setSubmitting(false);
 }, 5000);
         //after 5s, page shift to payment
