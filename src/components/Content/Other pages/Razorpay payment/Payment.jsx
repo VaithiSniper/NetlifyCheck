@@ -56,7 +56,7 @@ t.json()
     handler:async function (response){
       const docRef = doc(db, "users", "vaithi.genghiskhan@gmail.com");
       console.log(docRef);
-      updateDoc(docRef, {paymentStatus: true});
+      await updateDoc(docRef, {paymentStatus: true});
       //update current user's payment status to true
       
 const q = query(collection(db, "users"), where("paymentStatus", "==", false));
