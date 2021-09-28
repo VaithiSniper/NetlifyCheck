@@ -101,9 +101,11 @@ const classes = useStyles(); //styles for Paper component
         setTimeout(() => {
 fetch("https://sdi-backend.vercel.app/register/formData", {
   method:"POST",
+  mode:"cors",
   headers: {
         "Content-Type": "application/json",
         // "Content-Type": "application/x-www-form-urlencoded",
+        // "Origin":"https://sdi-backend.vercel.app"
     },
   body:JSON.stringify(values, null, 2)
 }).then(console.log("posted"));
