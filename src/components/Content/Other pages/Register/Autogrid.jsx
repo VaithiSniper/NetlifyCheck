@@ -1,4 +1,5 @@
 import React from "react";
+import {useHistory} from "react-router-dom";
 //React
 import { makeStyles, createStyles} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -15,13 +16,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore"; 
 //Firestore components
+
 const firebaseApp = initializeApp({
-  apiKey: "AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0",
-  authDomain: "sdic-22b69.firebaseapp.com",
-  projectId: "sdic-22b69"
+  apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
+  authDomain: 'sdic-22b69.firebaseapp.com',
+  projectId: 'sdic-22b69'
 });
 const db = getFirestore();
-
+//Firebase setup and db reference
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -47,12 +49,10 @@ const MyButton = styled(Button)({
 });
 //material-ui button styling
 
-
-
-
 export default function AutoGrid() {
 
   const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//media-query hook  
+  const history = useHistory();
   const largeBoxesStyling1 = {display:"flex",left:"0",width:"70%"}//for >1000px styling for fName, Lname
   const largeBoxesStyling2 = {display:"flex",left:"0",width:"100%"}//for >1000px styling for USN,mobile,domain,email ID
   const smallBoxesStyling = {width:"70%"}//for <1000px styling for fName, Lname
@@ -111,9 +111,8 @@ const classes = useStyles(); //styles for Paper component
         //using setTimeout to give formik time to fetch data
         setTimeout(() => {
         const userData = JSON.parse(JSON.stringify(values, null, 2));
-        console.log(userData.fName);
-  
-setDoc(doc(db, "users", userData.USN), {
+        //Store formik results in userData object
+setDoc(doc(db, "users", userData.email), {
     fName: userData.fName,
     lName : userData.lName,
     USN : userData.USN,
@@ -121,13 +120,17 @@ setDoc(doc(db, "users", userData.USN), {
     section : userData.section,
     phone : userData.phone,
     domainOfInterest : userData.domainOfInterest,
-    email : userData.email
+    email : userData.email,
+    paymentStatus: false
 }).then(console.log("Posted"));
-  
-setSubmitting(false);
-}, 1000);
-        //after 5s, page shift to payment
+//POST TO FIRESTORE
 
+setSubmitting(false);
+}, 2000);
+//after 5s, page shift to payment
+setTimeout(() => {
+  history.push('/payment')
+}, 1000)
       }}
 
     >
@@ -270,4 +273,3 @@ setSubmitting(false);
   </div>
  );
 }
-

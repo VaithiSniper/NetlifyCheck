@@ -16,6 +16,7 @@
     "bootstrap": "^5.1.0",
     "firebase": "^9.1.0",
     "formik": "^2.2.9",
+    "gmail-send": "^1.8.10",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.5",

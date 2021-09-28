@@ -1,17 +1,29 @@
 import React from "react";
 //react
-// eslint-disable-next-line no-unused-vars
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, doc, deleteDoc, updateDoc, query, where, getDocs  } from "firebase/firestore"; 
+//firebase imports
 import Button from '@mui/material/Button';
 import PaymentIcon from '@mui/icons-material/Payment';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/styles';
 import Container from '@mui/material/Container';
+//material ui imports
 import axios from 'axios';
-//material-ui
+//axios
 require('dotenv').config();
 //dotenv
 
+const firebaseApp = initializeApp({
+  apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
+  authDomain: 'sdic-22b69.firebaseapp.com',
+  projectId: 'sdic-22b69'
+});
+//firebase and firestore setup
+const db = getFirestore();
+//db reference
 
 const MyButton = styled(Button)({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -41,16 +53,27 @@ t.json()
     description: "Registration",
     image: `https://user-images.githubusercontent.com/58522375/134403348-e0b661c2-a75b-4013-a8fc-fa7957e2cb9a.png`,
     order_id: data.id,
-    handler: function (response){
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        //keep payment_id in database
-        
-        setTimeout(function(){window.location.replace('/payment/success');},5000)
+    handler:async function (response){
+      const docRef = doc(db, "users", "vaithi.genghiskhan@gmail.com");
+      console.log(docRef);
+      updateDoc(docRef, {paymentStatus: true});
+      //update current user's payment status to true
+      
+const q = query(collection(db, "users"), where("paymentStatus", "==", false));
+const querySnapshot = await getDocs(q);
+console.log(querySnapshot);
+querySnapshot.forEach(async(doc) => {
+  await deleteDoc(doc.ref)
+});
+//now to delete all documents with payment status == false
+
+setTimeout(function(){window.location.replace('/payment/success');},5000)
+//switch to payment success page
     },
     prefill: {
         "name": "Example",
-        "email": "example@example.com",
-        "contact": "9999999999"
+        "email": 'example@example.com',
+        "contact": '9999999999',
     },
     notes: {
         "address": "SDI Bangalore"

@@ -1,12 +1,28 @@
 import React from "react";
+import {useHistory} from "react-router-dom";
+//React
 import { makeStyles, createStyles} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import { Formik, Form, Field, ErrorMessage} from 'formik';
-import { useMediaPredicate } from "react-media-hook";
 import FormHeading from '../../Forms/FormHeading';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
+//Material UI components
+import { Formik, Form, Field, ErrorMessage} from 'formik';
+import { useMediaPredicate } from "react-media-hook";
+//Formik and hooks
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore"; 
+//Firestore components
+
+const firebaseApp = initializeApp({
+  apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
+  authDomain: 'sdic-22b69.firebaseapp.com',
+  projectId: 'sdic-22b69'
+});
+const db = getFirestore();
+//Firebase setup and db reference
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -35,6 +51,7 @@ const MyButton = styled(Button)({
 
 export default function AutoGrid() {
 
+  const history = useHistory();
   const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//media-query hook  
   const largeBoxesStyling1 = {display:"flex",left:"0",width:"70%"}//for >1000px styling for fName, Lname
   const largeBoxesStyling2 = {display:"flex",left:"0",width:"100%"}//for >1000px styling for email
@@ -74,47 +91,29 @@ const classes = useStyles(); //styles for Paper component
           errors.email = 'Invalid email address';
 
         }
-        
-        if (!values.fName) {
-
-          errors.fName = 'Required';
-
-        }
-        if (!values.lName) {
-
-          errors.lName = 'Required';
-
-        }
-        if (!values.grievance) {
-
-          errors.grievance = 'Required';
-
-        }
-
         return errors;
       }}
 
       onSubmit={(values, { setSubmitting }) => {
-
+        //values are received here
+        //using setTimeout to give formik time to fetch data
         setTimeout(() => {
-          
-          //values are received here
-          fetch(process.env.backendURL+'/register/formData',
-          {
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(values, null, 2)
-          }).then(()=>{
-            console.log("posted")
-          })
-          setSubmitting(false);
-
-        }, 1000);
-        //sent to backend
-        // eslint-disable-next-line no-restricted-globals
-        window.location.replace('/payment');
+        const userData = JSON.parse(JSON.stringify(values, null, 2));
+        //Store formik results in userData object
+setDoc(doc(db, "grievance"), {
+    fName: userData.fName,
+    lName : userData.lName,
+    email : userData.email,
+    grievance : userData.grievance
+}).then(console.log("Posted"));
+//POST TO FIRESTORE
+setSubmitting(false);
+}, 2000);
+//after 5s, page shift to payment
+setTimeout(() => {
+  history.push('/home')
+}, 1000)
       }}
-
     >
 
       {({ isSubmitting,isValid,dirty }) => (
@@ -173,7 +172,7 @@ const classes = useStyles(); //styles for Paper component
          {/* ROW 4 */}
          <Grid item xs={12} md={6} lg={3}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-          <MyButton type="submit" variant="outlined" style ={{width:"90%"}} href="/payment" disabled={isSubmitting || !isValid || !dirty}>Submit</MyButton>
+          <MyButton type="submit" variant="outlined" style ={{width:"90%"}} disabled={isSubmitting || !isValid || !dirty}>Submit</MyButton>
           </Paper>
          </Grid>
          <Grid item md={6} lg={6}>

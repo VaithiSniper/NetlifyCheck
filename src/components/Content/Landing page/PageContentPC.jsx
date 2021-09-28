@@ -36,7 +36,7 @@ function PageContentPC() {
     <KeyboardArrowUpIcon className="arrow-up svg_icons" onClick={handleClickUp} fontSize="large"/>
     </Grid>
     <Grid item md={12} lg={6} sm={12} xs={12}>
-    <div className="wrap"><h1 class="title2 text title">Become a member.</h1></div>
+    <div className="wrap"><h1 className="title2 text title">Become a member.</h1></div>
     </Grid>
     <Grid item md={6} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
