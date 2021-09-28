@@ -126,11 +126,11 @@ setDoc(doc(db, "users", userData.email), {
 //POST TO FIRESTORE
 
 setSubmitting(false);
-}, 2000);
+}, 5000);
 //after 5s, page shift to payment
 setTimeout(() => {
   history.push('/payment')
-}, 1000)
+}, 6000)
       }}
 
     >
