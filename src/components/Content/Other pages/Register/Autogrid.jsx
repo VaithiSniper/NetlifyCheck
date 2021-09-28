@@ -11,6 +11,17 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 //Formik components
 import { useMediaPredicate } from "react-media-hook";
 //react hook for media queries
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore"; 
+//Firestore components
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0",
+  authDomain: "sdic-22b69.firebaseapp.com",
+  projectId: "sdic-22b69"
+});
+const db = getFirestore();
+
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -99,16 +110,27 @@ const classes = useStyles(); //styles for Paper component
         //values are received here
         //using setTimeout to give formik time to fetch data
         setTimeout(() => {
-fetch("https://sdi-backend.vercel.app/register/formData", {
-  method:"POST",
-  mode:"cors",
-  headers: {
-        "Content-Type": "application/json",
-        // "Content-Type": "application/x-www-form-urlencoded",
-        // "Origin":"https://sdi-backend.vercel.app"
-    },
-  body:JSON.stringify(values, null, 2)
-}).then(console.log("posted"));
+
+          try {
+  const docRef = addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+// fetch("https://sdi-backend.vercel.app/register/formData", {
+//   method:"POST",
+//   mode:"cors",
+//   headers: {
+//         "Content-Type": "application/json",
+//         // "Content-Type": "application/x-www-form-urlencoded",
+//         // "Origin":"https://sdi-backend.vercel.app"
+//     },
+//   body:JSON.stringify(values, null, 2)
+// }).then(console.log("posted"));
 setSubmitting(false);
 }, 5000);
         //after 5s, page shift to payment
