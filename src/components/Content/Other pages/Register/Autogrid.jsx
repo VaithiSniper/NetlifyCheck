@@ -13,7 +13,7 @@ import { useMediaPredicate } from "react-media-hook";
 //react hook for media queries
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore"; 
+import { doc, setDoc } from "firebase/firestore"; 
 //Firestore components
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0",
@@ -110,9 +110,10 @@ const classes = useStyles(); //styles for Paper component
         //values are received here
         //using setTimeout to give formik time to fetch data
         setTimeout(() => {
-        const userData = (JSON.stringify(values, null, 2));
-          try {
-  const docRef = addDoc(collection(db, "users"), {
+        const userData = JSON.parse(JSON.stringify(values, null, 2));
+        console.log(userData.fName);
+  
+setDoc(doc(db, "users", userData.USN), {
     fName: userData.fName,
     lName : userData.lName,
     USN : userData.USN,
@@ -121,13 +122,10 @@ const classes = useStyles(); //styles for Paper component
     phone : userData.phone,
     domainOfInterest : userData.domainOfInterest,
     email : userData.email
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+}).then(console.log("Posted"));
+  
 setSubmitting(false);
-}, 5000);
+}, 1000);
         //after 5s, page shift to payment
 
       }}
