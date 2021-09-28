@@ -113,7 +113,14 @@ const classes = useStyles(); //styles for Paper component
         const userData = (JSON.stringify(values, null, 2));
           try {
   const docRef = addDoc(collection(db, "users"), {
-    userData
+    fName: userData.fName,
+    lName : userData.lName,
+    USN : userData.USN,
+    semester : userData.semester,
+    section : userData.section,
+    phone : userData.phone,
+    domainOfInterest : userData.domainOfInterest,
+    email : userData.email
   });
   console.log("Document written with ID: ", docRef.id);
 } catch (e) {
