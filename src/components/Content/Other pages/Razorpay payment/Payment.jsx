@@ -67,7 +67,7 @@ querySnapshot.forEach(async(doc) => {
 });
 //now to delete all documents with payment status == false
 
-setTimeout(function(){window.location.replace('/payment/success');},5000)
+
 //switch to payment success page
     },
     prefill: {
