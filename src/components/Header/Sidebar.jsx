@@ -60,6 +60,7 @@ export default function SwipeableTemporaryDrawer() {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
+            style={{backgroundColor:'transparent'}}
           >
             {list(anchor)}
           </SwipeableDrawer>
