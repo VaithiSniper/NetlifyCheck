@@ -17,7 +17,10 @@ const useStyles = makeStyles(() =>
     },
     paper: {
       textAlign: "center",
-      padding:"4%"
+      padding:"4%",
+      borderColor:"white",
+      height:"64px",
+      width: "64px"
     }
   })
 );
@@ -71,8 +74,9 @@ function PageContentPC() {
 
         </div>
         </div>
+        <div onClick={handleClickDown}>
         <ArrowDropDownIcon className="arrow-down svg_icons" onClick={handleClickDown} fontSize="large"/>
-       
+        </div>
         </Container>
         
         );},900)
@@ -91,7 +95,7 @@ function PageContentPC() {
 
 </div>
 </div>
-<div style={{paddingTop:"rem"}}>
+<div onClick={handleClickDown}>
 <ArrowDropDownIcon className="arrow-down svg_icons" onClick={handleClickDown} fontSize="large"/>
 </div>
 </Container>)
