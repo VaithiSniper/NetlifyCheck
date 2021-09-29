@@ -7,7 +7,7 @@ import Header from './Header/Navbar';
 //Basic components
 import PageContent from './Content/Landing page/PageContent';
 import Contact from './Content/Other pages/Contact Us/Contact';
-import Register from './Content/Other pages/Register/Register';
+import Register from './Content/Other pages/Register/Autogrid';
 import About from './Content/Other pages/About/About';
 import PaymentPortal from './Content/Other pages/Razorpay payment/Payment';
 import Events from './Content/Other pages/Events/Events';
@@ -18,7 +18,7 @@ import "./App.css";
 //imports
 
 function App() { 
-
+    
     const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//media-query hook  
     return(<Router>
     <Switch>

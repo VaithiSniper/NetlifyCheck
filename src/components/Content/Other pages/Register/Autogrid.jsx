@@ -7,6 +7,8 @@ import Grid from "@material-ui/core/Grid";
 import FormHeading from '../../Forms/FormHeading';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 //Material UI related
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 //Formik components
@@ -16,7 +18,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore"; 
 //Firestore components
-
+//--------------------------------------------------------------------------------------------------------------------------------
 const firebaseApp = initializeApp({
   apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
   authDomain: 'sdic-22b69.firebaseapp.com',
@@ -24,7 +26,7 @@ const firebaseApp = initializeApp({
 });
 const db = getFirestore();
 //Firebase setup and db reference
-
+//--------------------------------------------------------------------------------------------------------------------------------
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -37,7 +39,7 @@ const useStyles = makeStyles(() =>
   })
 );
 //styling for Paper
-
+//--------------------------------------------------------------------------------------------------------------------------------
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #B2BEB5 10%, #708090 100%)',
   border: 0,
@@ -48,22 +50,30 @@ const MyButton = styled(Button)({
   display: "flex"
 });
 //material-ui button styling
-
+//--------------------------------------------------------------------------------------------------------------------------------
+let userEmail; //create a global to store email for payment route
+//--------------------------------------------------------------------------------------------------------------------------------
+function setUserEmail(email){
+  userEmail = email;
+}
+//set the user email
+export const emailReturner = function userEmailReturner(){
+  return userEmail;
+}
+//return this email
+//--------------------------------------------------------------------------------------------------------------------------------
 export default function AutoGrid() {
-
   const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//media-query hook  
   const history = useHistory();
   const largeBoxesStyling1 = {display:"flex",left:"0",width:"70%"}//for >1000px styling for fName, Lname
   const largeBoxesStyling2 = {display:"flex",left:"0",width:"100%"}//for >1000px styling for USN,mobile,domain,email ID
   const smallBoxesStyling = {width:"70%"}//for <1000px styling for fName, Lname
   //Boxes styling for different fields
-
-const classes = useStyles(); //styles for Paper component
+  const classes = useStyles(); //styles for Paper component
+//--------------------------------------------------------------------------------------------------------------------------------
   return (
     <div>
-  
     <Formik
-
       initialValues={{ 
         fName: '',
         lName: '',
@@ -73,39 +83,24 @@ const classes = useStyles(); //styles for Paper component
         phone: '',
         domainOfInterest: '',
         email: '', }}
-
       validate={values => {
-
         const errors = {};
-
         if (!values.email) {
-
           errors.email = 'Required';
-
         } else if (
-
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-
         ) {
-
           errors.email = 'Invalid email address';
-
         }
         if (!values.phone) {
-
           errors.phone = 'Required';
-
         }
         else if(values.phone.length!==10) {
-
           errors.phone = 'Enter a valid 10 digit phone number';
         }
-        
-
         return errors;
-
       }}
-
+//--------------------------------------------------------------------------------------------------------------------------------
       onSubmit={(values, { setSubmitting }) => {
         //values are received here
         //using setTimeout to give formik time to fetch data
@@ -123,22 +118,19 @@ setDoc(doc(db, "users", userData.email), {
     email : userData.email,
     paymentStatus: false
 }).then(console.log("Posted"));
+setUserEmail(userData.email);
 //POST TO FIRESTORE
-
 setSubmitting(false);
 }, 5000);
 //after 5s, page shift to payment
 setTimeout(() => {
   history.push('/payment')
-}, 6000)
+}, 5000)
       }}
-
     >
-    
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}    
 
       {({ isSubmitting,isValid,dirty,errors }) => (
-       
-     
       <Form>
       <Grid container spacing={1} style={{textAlign:'center'}}>
       <Grid item md={7} lg={7}>
@@ -152,6 +144,7 @@ setTimeout(() => {
       </Grid>
       </Grid>
       {/* Heading row */}
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   
       <Grid container spacing={1}>
           {/* ROW 1 */}
           <Grid item md={6} lg={6}>
@@ -168,7 +161,7 @@ setTimeout(() => {
            <Field as="input"  name="lName" placeholder="Last Name" style={smallerThan1000?smallBoxesStyling:largeBoxesStyling1}/>
           </Paper>
          </Grid>
-
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   
           {/* ROW 2 */}
           <Grid item md={6} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
@@ -179,7 +172,7 @@ setTimeout(() => {
           <Field as="input" name="USN" placeholder="USN" style={smallerThan1000?smallBoxesStyling:largeBoxesStyling2}/>
           </Paper>
          </Grid>
-
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   
           {/* ROW 3 */}
           <Grid item md={6} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
@@ -213,7 +206,7 @@ setTimeout(() => {
           </Field>
           </Paper>
          </Grid>
-
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   
          {/* ROW 4 */}
          <Grid item md={6} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
@@ -225,7 +218,7 @@ setTimeout(() => {
           <ErrorMessage component="div" name="phone"/>
           </Paper>
          </Grid>
-
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   
           {/* ROW 5 */}
           <Grid item md={6} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
@@ -242,7 +235,7 @@ setTimeout(() => {
           </Field>
           </Paper>
          </Grid>
-
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   
           {/* ROW 6 */}
             <Grid item md={6} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
@@ -254,7 +247,7 @@ setTimeout(() => {
           <ErrorMessage component="div" name="email"/>
           </Paper>
          </Grid>
- 
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}    
           {/* ROW 7 */}
          <Grid item xs={1} sm={1} lg={6}>
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
@@ -262,14 +255,19 @@ setTimeout(() => {
          <Grid item xs={12} lg={6}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
           <MyButton type="submit" variant="outlined" style ={{width:"90%"}} disabled={isSubmitting || !isValid || !dirty}>Submit</MyButton>
+          <Backdrop
+  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+  open={isSubmitting}
+>
+  <CircularProgress color="inherit" />
+</Backdrop>
           </Paper>
          </Grid>
        </Grid>
        </Form>
       )}
-
     </Formik>
-
   </div>
  );
 }
+{/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}   

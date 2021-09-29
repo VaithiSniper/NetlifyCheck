@@ -7,15 +7,17 @@ import Grid from "@material-ui/core/Grid";
 import FormHeading from '../../Forms/FormHeading';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 //Material UI components
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import { useMediaPredicate } from "react-media-hook";
 //Formik and hooks
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc, collection} from "firebase/firestore"; 
 //Firestore components
-
+//--------------------------------------------------------------------------------------------------------------------------------
 const firebaseApp = initializeApp({
   apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
   authDomain: 'sdic-22b69.firebaseapp.com',
@@ -23,7 +25,7 @@ const firebaseApp = initializeApp({
 });
 const db = getFirestore();
 //Firebase setup and db reference
-
+//--------------------------------------------------------------------------------------------------------------------------------
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -36,7 +38,7 @@ const useStyles = makeStyles(() =>
   })
 );
 //styling for Paper
-
+//--------------------------------------------------------------------------------------------------------------------------------
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #B2BEB5 10%, #708090 100%)',
   border: 0,
@@ -47,8 +49,19 @@ const MyButton = styled(Button)({
   display: "flex"
 });
 //material-ui button styling
+//--------------------------------------------------------------------------------------------------------------------------------
 
-
+async function grievanceCreator(userData) {
+  const newGrievanceRef = doc(collection(db, "grievance"));
+  await  setDoc(newGrievanceRef, {
+      fName: userData.fName,
+      lName : userData.lName,
+      email : userData.email,
+      grievance : userData.grievance
+  }).then(console.log("Posted"));
+  //POST TO FIRESTORE
+  }
+//--------------------------------------------------------------------------------------------------------------------------------
 export default function AutoGrid() {
 
   const history = useHistory();
@@ -58,12 +71,11 @@ export default function AutoGrid() {
   const largeBoxesStyling3 = {display:"flex",left:"0",width:"100%",height:"280px",resize: "none"}//for >1000px styling for grievance
   const smallBoxesStyling = {width:"70%"}//for <1000px styling for fName, Lname, email
   const smallBoxesStyling2 = {width:"70%",height:"238px",resize: "none"}//for <1000px styling for grievance
-const classes = useStyles(); //styles for Paper component
+  const classes = useStyles(); //styles for Paper component
+//--------------------------------------------------------------------------------------------------------------------------------
   return (
     <div>
-  
     <Formik
-
       initialValues={{ 
         fName: '',
         lName: '',
@@ -73,52 +85,39 @@ const classes = useStyles(); //styles for Paper component
         phone: '',
         domainOfInterest: '',
         email: '', }}
-
+//--------------------------------------------------------------------------------------------------------------------------------
       validate={values => {
-
         const errors = {};
-
         if (!values.email) {
-
           errors.email = 'Required';
-
         } else if (
-
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-
         ) {
-
           errors.email = 'Invalid email address';
-
         }
         return errors;
       }}
-
+//--------------------------------------------------------------------------------------------------------------------------------
       onSubmit={(values, { setSubmitting }) => {
         //values are received here
         //using setTimeout to give formik time to fetch data
         setTimeout(() => {
         const userData = JSON.parse(JSON.stringify(values, null, 2));
         //Store formik results in userData object
-setDoc(doc(db, "grievance"), {
-    fName: userData.fName,
-    lName : userData.lName,
-    email : userData.email,
-    grievance : userData.grievance
-}).then(console.log("Posted"));
-//POST TO FIRESTORE
+//--------------------------------------------------------------------------------------------------------------------------------
+grievanceCreator(userData)
+//posts grievance to firestore
+//--------------------------------------------------------------------------------------------------------------------------------
 setSubmitting(false);
-}, 2000);
+}, 3000);
 //after 5s, page shift to payment
 setTimeout(() => {
   history.push('/home')
-}, 1000)
+}, 3000)
       }}
     >
-
-      {({ isSubmitting,isValid,dirty }) => (
-       
-     
+{/*--------------------------------------------------------------------------------------------------------------------------------------*/}
+      {({ isSubmitting,isValid,dirty }) => (  
       <Form style={{padding:"2%"}}>
       <Grid container spacing={1} style={{textAlign:'center'}}>
       <Grid item xs={12} lg={3}>
@@ -132,6 +131,7 @@ setTimeout(() => {
       {/* Padding grid */}
       </Grid>
       {/* Heading row */}
+{/*--------------------------------------------------------------------------------------------------------------------------------------*/}
       <Grid container spacing={1}>
           {/* ROW 1 */}
          <Grid item xs={12} md={6} lg={3}>
@@ -148,6 +148,7 @@ setTimeout(() => {
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
          </Grid>
          {/* Padding grid */}
+{/*--------------------------------------------------------------------------------------------------------------------------------------*/}
           {/* ROW 2 */}
          <Grid item xs={12} lg={6}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
@@ -159,6 +160,7 @@ setTimeout(() => {
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
          </Grid>
            {/* Padding grid */}
+{/*--------------------------------------------------------------------------------------------------------------------------------------*/}
           {/* ROW 3 */}
           <Grid item xs={12} md={6} lg={6}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
@@ -169,10 +171,19 @@ setTimeout(() => {
          <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent"}}></Paper>
          </Grid>
           {/* Padding grid */}
+{/*--------------------------------------------------------------------------------------------------------------------------------------*/}
          {/* ROW 4 */}
          <Grid item xs={12} md={6} lg={3}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-          <MyButton type="submit" variant="outlined" style ={{width:"90%"}} disabled={isSubmitting || !isValid || !dirty}>Submit</MyButton>
+          <MyButton type="submit" variant="outlined" style ={{width:"90%"}} disabled={isSubmitting || !isValid || !dirty}>
+          Submit
+          </MyButton>
+          <Backdrop
+  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+  open={isSubmitting}
+>
+  <CircularProgress color="inherit" />
+</Backdrop>
           </Paper>
          </Grid>
          <Grid item md={6} lg={6}>
@@ -187,3 +198,4 @@ setTimeout(() => {
   </div>
  );
 }
+{/*--------------------------------------------------------------------------------------------------------------------------------------*/}

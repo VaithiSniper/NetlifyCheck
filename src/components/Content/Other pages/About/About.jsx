@@ -68,6 +68,8 @@ The contributions of the club to the College and the CSE dept. speaks for itself
 <li>SDI Server</li>
 <li>Face recognition System for attendance</li>
 <li>E-yantra drone Software</li>
+<li>Resnal</li>
+<li>SDI flutter app</li>
 </ol>
 </p>
 <Button onClick={handleClose}><ExitToAppIcon sx={{color: 'white'}}  fontSize='large'/></Button>  
