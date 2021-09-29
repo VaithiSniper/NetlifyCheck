@@ -18,9 +18,9 @@ require('dotenv').config();
 //dotenv
 //--------------------------------------------------------------------------------------------------------------------------------
 const firebaseApp = initializeApp({
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId
+  apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
+  authDomain: 'sdic-22b69.firebaseapp.com',
+  projectId: 'sdic-22b69'
 });
 //firebase and firestore setup
 const db = getFirestore();
