@@ -20,9 +20,9 @@ import { doc, setDoc } from "firebase/firestore";
 //Firestore components
 //--------------------------------------------------------------------------------------------------------------------------------
 const firebaseApp = initializeApp({
-  apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
-  authDomain: 'sdic-22b69.firebaseapp.com',
-  projectId: 'sdic-22b69'
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId
 });
 const db = getFirestore();
 //Firebase setup and db reference

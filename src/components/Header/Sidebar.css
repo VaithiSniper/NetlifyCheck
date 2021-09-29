@@ -4,3 +4,6 @@
 .css-bshv44-MuiButtonBase-root-MuiListItem-root{
     background-color: transparent !important;
 }
+.MuiDrawer-paperAnchorRight,.css-1poq2dj-MuiDrawer-paper{
+    background-color: black !important;
+}

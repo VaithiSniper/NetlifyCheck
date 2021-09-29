@@ -18,9 +18,9 @@ require('dotenv').config();
 //dotenv
 //--------------------------------------------------------------------------------------------------------------------------------
 const firebaseApp = initializeApp({
-  apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
-  authDomain: 'sdic-22b69.firebaseapp.com',
-  projectId: 'sdic-22b69'
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId
 });
 //firebase and firestore setup
 const db = getFirestore();
@@ -46,7 +46,7 @@ t.json()
 )
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
-    key: 'rzp_test_ImFdA7jRziHClS', // Enter the Key ID generated from the Dashboard
+    key: process.env.KEY_ID, // Enter the Key ID generated from the Dashboard
     amount: '5000', 
     currency: 'INR',
     name: "SDI Club",
@@ -111,7 +111,7 @@ function PaymentPortal() {
         <MyButton
         variant="contained"
         size="large"
-        onClick={displayRazorPay()}
+        onClick={displayRazorPay}
         >
         <PaymentIcon/>
         Pay ₹50
