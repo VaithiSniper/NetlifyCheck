@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import {emailReturner} from "./../Register/Autogrid";
 //react
 import { initializeApp } from "firebase/app";
@@ -46,7 +46,7 @@ t.json()
 )
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
-    key: 'rzp_test_ImFdA7jRziHClS', // Enter the Key ID generated from the Dashboard
+    key: 'rzp_live_FgzyyI34xU2AQW', // Enter the Key ID generated from the Dashboard
     amount: '5000', 
     currency: 'INR',
     name: "SDI Club",
@@ -99,13 +99,33 @@ function loadRazorPay()
 //function to load razorpay script
 //--------------------------------------------------------------------------------------------------------------------------------
 function PaymentPortal() {
-  
+  if(!emailReturner())
+  return(
+    <Container>
+        <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
+        <h1 className="title" style={{textAlign:"center"}}>You need to fill the registration form</h1>
+        <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
+        You MUST use the same email address as in the registration form during checkout.
+        </CardContent>
+        <CardContent>
+        <MyButton
+        variant="contained"
+        size="large"
+        href="/register"
+        >
+        Return to register
+        </MyButton>
+        </CardContent>
+        </Card>
+        </Container>
+  )
+  else
   return (
         <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
         <h1 className="title" style={{textAlign:"center"}}>Join SDI today.</h1>
         <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
-         On succesful payment, you can create an account in the SDI app. You MUST use the same email address as in the registration form and and also supply USN as proof of payment.
+         On succesful payment, you can create an account in the SDI app. You MUST use the same email address as in the registration form during checkout.
         </CardContent>
         <CardContent>
         <MyButton
