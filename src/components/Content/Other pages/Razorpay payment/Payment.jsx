@@ -79,10 +79,10 @@ t.json()
           }, (error) => {
             console.log(error);
           });
-          setTimeout(()=>{
-            window.location.replace("/payment/success");
-          },5000);
-    // switch to payment success page
+    //       setTimeout(()=>{
+    //         window.location.replace("/payment/success");
+    //       },5000);
+    // // switch to payment success page
         },
     //--------------------------------------------------------------------------------------------------------------------------------
     prefill: {
