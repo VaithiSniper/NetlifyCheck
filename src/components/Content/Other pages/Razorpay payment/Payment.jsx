@@ -64,11 +64,12 @@ t.json()
           falsePurger();
           //to clear documents with fasle
           const paymentMail={
-              email: paymentSendEmail,
-              payment_id: payment_id
+              email: 'vaithi.genghiskan@gmail.com',
+              payment_id: '231naskdaskd'
           }
           fetch('https://sdi-backend-serverless.vercel.app/api/mailSenderPayment',{
             method: 'POST', 
+            mode:'cors',
             headers: {
               'Content-Type': 'application/json',
             },
