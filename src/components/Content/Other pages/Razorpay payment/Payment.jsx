@@ -47,8 +47,8 @@ t.json()
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
     key: 'rzp_test_fBCFA7anpNMOBh', // Enter the Key ID generated from the Dashboard
-    amount: data.amount, 
-    currency: data.currency,
+    amount: 5000, 
+    currency: 'INR',
     name: "SDI Club",
     description: "Registration",
     image: `https://sdi-backend-serverless.vercel.app/api/logo`,
