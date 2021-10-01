@@ -63,11 +63,11 @@ t.json()
           //update current user's payment status to true
           falsePurger();
           //to clear documents with fasle
-          const paymentMail={
-              email: 'vaithi.genghiskan@gmail.com',
-              payment_id: '231naskdaskd'
-          }
-          axios.post('https://httpbin.org/post', paymentMail, {
+          const paymentMail= JSON.stringify({
+              email: paymentSendEmail,
+              payment_id: payment_id
+          })
+          axios.post('https://sdi-backend-serverless.vercel.app/api/mailSenderPayment', paymentMail, {
             headers: {
               
               'Content-Type': 'application/json'
@@ -85,9 +85,9 @@ t.json()
         },
     //--------------------------------------------------------------------------------------------------------------------------------
     prefill: {
-        "name": "",
-        "email": "",
-        "contact": "",
+        "name": "Vaithee",
+        "email": "vaithi.genghiskan@gmail.com",
+        "contact": "8618560485",
     },
     notes: {
         "address": "SDI Bangalore"
