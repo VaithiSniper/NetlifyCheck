@@ -20,27 +20,7 @@ const MyButton = styled(Button)({
 //material-ui button styling
 
 function PaymentSuccess(){
-    if(!emailReturner())
-    return(
-      <Container>
-          <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
-          <h1 className="title" style={{textAlign:"center"}}>You need to fill the registration form</h1>
-          <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
-          You MUST use the same email address as in the registration form during checkout.
-          </CardContent>
-          <CardContent>
-          <MyButton
-          variant="contained"
-          size="large"
-          href="/register"
-          >
-          Return to register
-          </MyButton>
-          </CardContent>
-          </Card>
-          </Container>
-    )
-    else
+
     return(
         <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center",padding:"10%"}}>
