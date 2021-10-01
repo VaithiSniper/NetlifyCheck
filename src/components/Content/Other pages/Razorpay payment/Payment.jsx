@@ -56,8 +56,9 @@ t.json()
     //--------------------------------------------------------------------------------------------------------------------------------
     handler:
         async function successHandler (response){
-          const docRef = doc(db, "users", emailReturner());
-          const paymentSendEmail = docRef.email;
+          const preUserEmail = emailReturner();
+          const docRef = doc(db, "users", preUserEmail);
+          const paymentSendEmail = preUserEmail;
           const payment_id=response.razorpay_payment_id;
           await updateDoc(docRef, {paymentStatus: true,payment_id:payment_id});
           //update current user's payment status to true
