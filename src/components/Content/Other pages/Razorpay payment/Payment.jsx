@@ -128,7 +128,7 @@ function PaymentPortal() {
     <MyButton
     variant="contained"
     size="large"
-    onClick={displayRazorPay()}
+    onClick={displayRazorPay}
     >
     <PaymentIcon/>
     Pay ₹50
