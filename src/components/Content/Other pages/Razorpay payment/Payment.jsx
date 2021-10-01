@@ -67,15 +67,13 @@ t.json()
               email: 'vaithi.genghiskan@gmail.com',
               payment_id: '231naskdaskd'
           }
-          fetch('https://sdi-backend-serverless.vercel.app/api/mailSenderPayment',{
-            method: 'POST', 
-            mode:'cors',
+          axios.post('https://httpbin.org/post', paymentMail, {
             headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(paymentMail),
-          }
-          ).then((response) => {
+              
+              'Content-Type': 'application/json'
+            }
+          })
+          .then((response) => {
             console.log(response);
           }, (error) => {
             console.log(error);
