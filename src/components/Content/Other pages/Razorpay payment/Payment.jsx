@@ -79,10 +79,10 @@ t.json()
           }, (error) => {
             console.log(error);
           });
-    //       setTimeout(()=>{
-    //         window.location.replace("/payment/success");
-    //       },5000);
-    // // switch to payment success page
+          setTimeout(()=>{
+            window.location.replace("/payment/success");
+          },5000);
+    // switch to payment success page
         },
     //--------------------------------------------------------------------------------------------------------------------------------
     prefill: {
@@ -122,7 +122,7 @@ function PaymentPortal() {
     <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
     <h1 className="title" style={{textAlign:"center"}}>Join SDI today.</h1>
     <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
-     On succesful payment, you can create an account in the SDI app. You MUST use the same email address as in the registration form during checkout.
+    On successful payment, take a screenshot of the email you receive on your registered mail ID and send it to +918320279863<br/>Check your spam folder if you don't see the email in your inbox
     </CardContent>
     <CardContent>
     <MyButton
