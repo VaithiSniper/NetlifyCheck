@@ -12,7 +12,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 //Material UI components
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import { useMediaPredicate } from "react-media-hook";
-//Formik and hooks
+import axios from 'axios';
+//Formik,hooks and axios
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc, collection} from "firebase/firestore"; 
@@ -106,6 +107,16 @@ export default function AutoGrid() {
         //Store formik results in userData object
 //--------------------------------------------------------------------------------------------------------------------------------
 grievanceCreator(userData)
+axios.post('https://sdi-backend-serverless.vercel.app/api/mailSenderContact',{email: userData.email},{
+            headers: {
+              
+              'Content-Type': 'application/json'
+            }
+          }).then((response) => {
+            console.log(response);
+          }, (error) => {
+            console.log(error);
+          });
 //posts grievance to firestore
 //--------------------------------------------------------------------------------------------------------------------------------
 setSubmitting(false);
