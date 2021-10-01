@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState} from "react";
 import {emailReturner} from "./../Register/Autogrid";
 //react
 import { initializeApp } from "firebase/app";
@@ -79,10 +79,10 @@ t.json()
           }, (error) => {
             console.log(error);
           });
-          // setTimeout(()=>{
-          //   window.location.replace("/payment/success");
-          // },5000);
-    //switch to payment success page
+          setTimeout(()=>{
+            window.location.replace("/payment/success");
+          },5000);
+    // switch to payment success page
         },
     //--------------------------------------------------------------------------------------------------------------------------------
     prefill: {
@@ -117,6 +117,26 @@ function loadRazorPay()
 //function to load razorpay script
 //--------------------------------------------------------------------------------------------------------------------------------
 function PaymentPortal() {
+  const [contentOnTrue, setContentOnTrue] = useState(
+    <Container>
+    <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
+    <h1 className="title" style={{textAlign:"center"}}>Join SDI today.</h1>
+    <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
+     On succesful payment, you can create an account in the SDI app. You MUST use the same email address as in the registration form during checkout.
+    </CardContent>
+    <CardContent>
+    <MyButton
+    variant="contained"
+    size="large"
+    onClick={displayRazorPay()}
+    >
+    <PaymentIcon/>
+    Pay ₹50
+    </MyButton>
+    </CardContent>
+    </Card>
+    </Container>
+  )
   if(!emailReturner())
   return(
     <Container>
@@ -138,26 +158,7 @@ function PaymentPortal() {
         </Container>
   )
   else
-  return (
-        <Container>
-        <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
-        <h1 className="title" style={{textAlign:"center"}}>Join SDI today.</h1>
-        <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
-         On succesful payment, you can create an account in the SDI app. You MUST use the same email address as in the registration form during checkout.
-        </CardContent>
-        <CardContent>
-        <MyButton
-        variant="contained"
-        size="large"
-        onClick={displayRazorPay}
-        >
-        <PaymentIcon/>
-        Pay ₹50
-        </MyButton>
-        </CardContent>
-        </Card>
-        </Container>
-  );
+  return (contentOnTrue);
 }
 //Payment component
 //--------------------------------------------------------------------------------------------------------------------------------
