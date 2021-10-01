@@ -51,31 +51,14 @@ function mobileContent ()
 Founded by numerous notable alumni and reformed by the glorious students of the current batches of BIT, SDI is THE ELITE coding/tech club of BIT.
 The contributions of the club to the College and the CSE dept. speaks for itself. 
 </p>
-<h3 className='sub' style={{textAlign:"center",fontSize:"200%"}}>SDI projects<Button onClick={handleOpen}><OpenInFullIcon fontSize='large' sx={{color: 'white'}} /></Button></h3>
 </div>
-
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-<Box sx={style}>
-<div className="scroll_right p2" style={{textAlign:"left"}}>
+<div className="scroll_right p2" style={{textAlign:"center"}}>
 <p className="right_about_us">
-<ol>
-<li>SDI Website</li>
-<li>SDI Server</li>
-<li>Face recognition System for attendance</li>
-<li>E-yantra drone Software</li>
-<li>Resnal</li>
-<li>SDI flutter app</li>
-</ol>
+Resnal, attendance-management-system, timetable-generation and many more projects our members have contributed is a testimony to our superior quality among our BIT counterparts.
+We’re more than just a club, we’re more than just developing codes, we instil life into them with every stroke of our keyboard keys! 
+If you’re looking for an ideal platform that can help you in your overall development as a complete coding professional and can provide a conducive system of learning under the guidance of the BEST of our college, to establish a strong foundation for your coding career, then your search stops here!
 </p>
-<Button onClick={handleClose}><ExitToAppIcon sx={{color: 'white'}}  fontSize='large'/></Button>  
 </div>  
-</Box>
-</Modal>
 </div>)
 }   
 

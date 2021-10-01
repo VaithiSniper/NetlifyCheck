@@ -116,7 +116,8 @@ setDoc(doc(db, "users", userData.email), {
     phone : userData.phone,
     domainOfInterest : userData.domainOfInterest,
     email : userData.email,
-    paymentStatus: false
+    paymentStatus: false,
+    payment_id : ""
 }).then(console.log("Posted"));
 setUserEmail(userData.email);
 //POST TO FIRESTORE
@@ -228,10 +229,10 @@ setTimeout(() => {
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
           <Field as="select" name="domainOfInterest" style={smallerThan1000?smallBoxesStyling:largeBoxesStyling2}>
           <option value="" disabled>Domain of interest</option>
-          <option value="A">App development</option>
-          <option value="B">Web development</option>
-          <option value="C">Competetive programming</option>
-          <option value="D">Data Science</option>
+          <option value="App development">App development</option>
+          <option value="Web development">Web development</option>
+          <option value="Competitive programming ">Competitive programming</option>
+          <option value="Data Science">Data Science</option>
           </Field>
           </Paper>
          </Grid>

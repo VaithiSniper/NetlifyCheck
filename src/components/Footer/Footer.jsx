@@ -35,18 +35,24 @@ function FooterMobile(){
     return(
         <Grid container spacing={1}>
         <Grid item sm={4} xs={4} align="center">
-        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
+        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
+        <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link"> 
         <div className="insta"></div>
+        </a>
         </Paper>
         </Grid>
         <Grid item sm={4} xs={4}>
-        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
-        <div className="twitter"></div>
+        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
+        <a href="https://twitter.com/sdi_bit?s=08">
+        <div className="twitter"><a href="https://twitter.com/sdi_bit?s=08"/></div>
+        </a>
         </Paper>
         </Grid>
         <Grid item sm={4} xs={4} align="center">
-        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>   
+        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}> 
+        <a href="https://www.linkedin.com/company/student-developers-initiative">  
         <div className="linkedin"></div>
+        </a>
         </Paper>
         </Grid>
         </Grid>
@@ -70,18 +76,24 @@ function FooterPC(){
     </Grid>
     {/* Padding grid */}
     <Grid item md={1} lg={1}>
-    <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
+    <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>
+    <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link">  
     <div className="insta"></div>
+    </a>
     </Paper>
     </Grid>
     <Grid item md={1} lg={1}>
     <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
+    <a href="https://twitter.com/sdi_bit?s=08">
     <div className="twitter"></div>
+    </a>
     </Paper>
     </Grid>
     <Grid item md={1} lg={1}>
     <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
+    <a href="https://www.linkedin.com/company/student-developers-initiative">
     <div className="linkedin"></div>
+    </a>
     </Paper>
     </Grid>
     {/* <div className="socials" style={{float: "right",textAlign:"center",marginRight:"10%",marginTop: "0",paddingTop: "0"}}> */}
@@ -100,5 +112,4 @@ function Foot(props){
 }
 //function 
 export default Foot;
-
 //exports

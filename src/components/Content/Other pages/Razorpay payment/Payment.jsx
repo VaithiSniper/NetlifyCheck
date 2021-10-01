@@ -41,29 +41,47 @@ async function displayRazorPay(){
   const res = await loadRazorPay();
   if(!res)
   alert('Error loading SDK. Are you online?');
-    const data = axios.post('https://sdi-backend.vercel.app/payment').then((t) =>
+    const data = axios.post('https://sdi-backend-serverless.vercel.app/api/payment').then((t) =>
 t.json()
 )
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
-    key: 'rzp_live_FgzyyI34xU2AQW', // Enter the Key ID generated from the Dashboard
-    amount: '5000', 
-    currency: 'INR',
+    key: 'rzp_test_fBCFA7anpNMOBh', // Enter the Key ID generated from the Dashboard
+    amount: data.amount, 
+    currency: data.currency,
     name: "SDI Club",
     description: "Registration",
-    image: `https://user-images.githubusercontent.com/58522375/134403348-e0b661c2-a75b-4013-a8fc-fa7957e2cb9a.png`,
+    image: `https://sdi-backend-serverless.vercel.app/api/logo`,
     order_id: data.id,
     //--------------------------------------------------------------------------------------------------------------------------------
     handler:
-        async function successHandler (){
+        async function successHandler (response){
           const docRef = doc(db, "users", emailReturner());
-          await updateDoc(docRef, {paymentStatus: true});
+          const paymentSendEmail = docRef.email;
+          const payment_id=response.razorpay_payment_id;
+          await updateDoc(docRef, {paymentStatus: true,payment_id:payment_id});
           //update current user's payment status to true
           falsePurger();
           //to clear documents with fasle
-          setTimeout(()=>{
-            window.location.replace("/payment/success");
-          },5000);
+          const paymentMail={
+              email: paymentSendEmail,
+              payment_id: payment_id
+          }
+          fetch('https://sdi-backend-serverless.vercel.app/api/mailSenderPayment',{
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(paymentMail),
+          }
+          ).then((response) => {
+            console.log(response);
+          }, (error) => {
+            console.log(error);
+          });
+          // setTimeout(()=>{
+          //   window.location.replace("/payment/success");
+          // },5000);
     //switch to payment success page
         },
     //--------------------------------------------------------------------------------------------------------------------------------

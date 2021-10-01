@@ -22,7 +22,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    overflow: scroll;
   }
   .bg_image_contact_mobile{
     background-image: url('contact.png');
@@ -42,7 +42,7 @@
   }
   .bg_image_about_mobile{
     background-image: url('contact.png');
-    height:100%;
+    height:130vh;
     width:100%;
     background-position: center center;
     background-repeat: no-repeat;

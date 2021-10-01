@@ -69,7 +69,7 @@ export default function AutoGrid() {
   const largeBoxesStyling1 = {display:"flex",left:"0",width:"70%"}//for >1000px styling for fName, Lname
   const largeBoxesStyling2 = {display:"flex",left:"0",width:"100%"}//for >1000px styling for email
   const largeBoxesStyling3 = {display:"flex",left:"0",width:"100%",height:"280px",resize: "none"}//for >1000px styling for grievance
-  const smallBoxesStyling = {width:"70%"}//for <1000px styling for fName, Lname, email
+  const smallBoxesStyling = {width:"70%",}//for <1000px styling for fName, Lname, email
   const smallBoxesStyling2 = {width:"70%",height:"238px",resize: "none"}//for <1000px styling for grievance
   const classes = useStyles(); //styles for Paper component
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -164,7 +164,7 @@ setTimeout(() => {
           {/* ROW 3 */}
           <Grid item xs={12} md={6} lg={6}>
           <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-          <Field as="textarea" name="grievance" placeholder="Grievance" required style={smallerThan1000?smallBoxesStyling2:largeBoxesStyling3}/>
+          <Field as="textarea" name="grievance" placeholder="Message" required style={smallerThan1000?smallBoxesStyling2:largeBoxesStyling3}/>
           </Paper>
          </Grid>
          <Grid item md={6} lg={6}>
