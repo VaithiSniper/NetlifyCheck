@@ -142,9 +142,6 @@ function PaymentPortal() {
     <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
         <h1 className="title" style={{textAlign:"center"}}>You need to fill the registration form</h1>
-        <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
-        You MUST use the same email address as in the registration form during checkout.
-        </CardContent>
         <CardContent>
         <MyButton
         variant="contained"

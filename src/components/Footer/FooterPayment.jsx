@@ -18,8 +18,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
-  color : 'white'
+  p: 4
 };
 //box styling
 
@@ -50,7 +49,7 @@ function FooterMobile(){
         <Grid container spacing={1}>
         <Grid item sm={12} xs={12} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-        <Button onClick={handleOpen}>Terms and conditions</Button>
+        <Button onClick={handleOpen} style={{color:"white"}}>Terms and conditions,Privacy policy and Refund policy</Button>
 <Modal
   open={open}
   onClose={handleClose}
@@ -59,58 +58,16 @@ function FooterMobile(){
 >
   <Box sx={style}>
     <Typography id="modal-modal-title" variant="h6" component="h2">
-      Terms and conditions
+    Terms and conditions,Privacy policy and Refund policy
     </Typography>
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+    <b>Operational address : SDI Club, Bangalore Institute of Technology, Bangalore - 560085</b><br/>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
     </Typography>
   </Box>
 </Modal>
         </Paper>
-        </Grid>
-        <Grid item sm={12} xs={12}>
-        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-        <Button onClick={handleOpen}>Privacy policy</Button>
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      Privacy policy
-    </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-    </Typography>
-  </Box>
-</Modal>
-        </Paper>
-        </Grid>
-        <Grid item sm={12} xs={12} align="center">
-        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}> 
-        <Button onClick={handleOpen}>Refund policy</Button>
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      Refund policy
-    </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-    </Typography>
-  </Box>
-</Modal>
-        </Paper>
-        </Grid>
-        <Grid item sm={12} xs={12}><Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}></Paper>  <Typography id="sub" sx={{ mt: 2 }}>
-    SDI Club, Bangalore Institute of Technology, Bangalore - 560085
-    </Typography></Grid>
+        </Grid> 
         </Grid>
         )
 }
@@ -123,74 +80,29 @@ function FooterPC(){
   const handleClose = () => setOpen(false);
     const classes = useStyles(); //styles for Paper component
     return(
-        <Grid container spacing={1}>
-    <Grid item md={4} lg={4}>
-    <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-    <Button onClick={handleOpen}>Terms and Conditions</Button>
+      <Grid container spacing={1} style={{ position: "fixed", bottom: "0"}}>
+      <Grid item lg={12} md={12} align="center">
+      <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>  
+      <Button onClick={handleOpen} style={{color:"white"}}>Terms and conditions,Privacy policy and Refund policy</Button>
 <Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
+open={open}
+onClose={handleClose}
+aria-labelledby="modal-modal-title"
+aria-describedby="modal-modal-description"
 >
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      Terms and conditions
-    </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-    </Typography>
-  </Box>
+<Box sx={style}>
+  <Typography id="modal-modal-title" variant="h6" component="h2">
+  Terms and conditions,Privacy policy and Refund policy
+  </Typography>
+  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+  <b>Operational address : SDI Club, Bangalore Institute of Technology, Bangalore - 560085</b><br/>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
+  </Typography>
+</Box>
 </Modal>
-    </Paper>
-    </Grid>
-    {/* Terms and conditions */}
-    <Grid item md={4} lg={4}>
-    <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>
-    <Button onClick={handleOpen}>Privacy policy</Button>
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      Privacy policy
-    </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-    </Typography>
-  </Box>
-</Modal>
-    </Paper>
-    </Grid>
-    {/* Privacy policy */}
-    <Grid item md={4} lg={4}>
-    <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
-    <Button onClick={handleOpen}>Refund policy</Button>
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      Refund policy
-    </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-    </Typography>
-  </Box>
-</Modal>
-    </Paper>
-    </Grid>
-    {/* Refund policy */}
-    <Grid item lg={12} md={12}><Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}></Paper>  <Typography id="sub" sx={{ mt: 2 }}>
-    SDI Club, Bangalore Institute of Technology, Bangalore - 560085
-    </Typography></Grid>
-    </Grid>
+      </Paper>
+      </Grid> 
+      </Grid>
     
         )
 }
