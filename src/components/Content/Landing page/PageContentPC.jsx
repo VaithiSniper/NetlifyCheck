@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Container from 'react-bootstrap/Container';
-import $ from 'jquery';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import {Link} from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";

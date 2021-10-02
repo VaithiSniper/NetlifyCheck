@@ -3,10 +3,7 @@ import { useMediaPredicate } from "react-media-hook";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, createStyles} from "@material-ui/core/styles";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import { Link } from "react-router-dom";
 //npm imports
 
 const style = {
@@ -49,23 +46,7 @@ function FooterMobile(){
         <Grid container spacing={1}>
         <Grid item sm={12} xs={12} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-        <Button onClick={handleOpen} style={{color:"white"}}>Terms and conditions,Privacy policy and Refund policy</Button>
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-    Terms and conditions,Privacy policy and Refund policy
-    </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-    <b>Operational address : SDI Club, Bangalore Institute of Technology, Bangalore - 560085</b><br/>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-    </Typography>
-  </Box>
-</Modal>
+        <Link to="/terms" style={{color:"white"}} target="_blank" rel="noopener noreferrer">Terms and conditions,Privacy policy and Refund policy</Link>
         </Paper>
         </Grid> 
         </Grid>
@@ -83,23 +64,7 @@ function FooterPC(){
       <Grid container spacing={1} style={{ position: "fixed", bottom: "0"}}>
       <Grid item lg={12} md={12} align="center">
       <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>  
-      <Button onClick={handleOpen} style={{color:"white"}}>Terms and conditions,Privacy policy and Refund policy</Button>
-<Modal
-open={open}
-onClose={handleClose}
-aria-labelledby="modal-modal-title"
-aria-describedby="modal-modal-description"
->
-<Box sx={style}>
-  <Typography id="modal-modal-title" variant="h6" component="h2">
-  Terms and conditions,Privacy policy and Refund policy
-  </Typography>
-  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-  <b>Operational address : SDI Club, Bangalore Institute of Technology, Bangalore - 560085</b><br/>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh magna, elementum efficitur elementum nec, porttitor vel nunc. Sed tristique leo elit, a tempor neque varius et. Fusce sit amet libero non leo consectetur luctus vitae sed magna. Nulla enim felis, rhoncus at urna at, vehicula aliquam sapien. Nulla facilisi. Ut maximus quam ac felis laoreet semper. Nulla est nulla, consequat quis tempus a, ornare et dolor. Vestibulum a risus vel turpis porttitor lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus purus nec tellus ultricies facilisis. Ut vel lorem purus. Maecenas sollicitudin enim vel finibus condimentum. Nulla vitae arcu sodales, iaculis elit at, blandit nisi. 
-  </Typography>
-</Box>
-</Modal>
+      <Link to="/terms" style={{color:"white"}} target="_blank" rel="noopener noreferrer">Terms and conditions,Privacy policy and Refund policy</Link>
       </Paper>
       </Grid> 
       </Grid>

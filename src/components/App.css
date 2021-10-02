@@ -131,4 +131,39 @@
       background-position: 0% 50%;
     }
   }
+  .bg_image_paymentterms{
+    background: linear-gradient(-45deg, #F25E74, #FF8884, #026178, #0682A6, #34A1C7);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 170vh;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .bg_image_payment_mobileterms{
+    background: linear-gradient(-45deg, #F25E74, #FF8884, #026178, #0682A6, #34A1C7);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 390vh;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+ 
  
