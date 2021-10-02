@@ -4,7 +4,7 @@ import './Events.css';
 function Temp() {
    
     return(
-        <Box><h1 className="events_title">Registrations will commence on 6th</h1></Box>
+        <Box wrap><h2 className="events_title">Registrations will commence on 6th</h2></Box>
     )
 }
 export default Temp;
