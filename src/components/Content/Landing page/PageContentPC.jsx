@@ -9,7 +9,6 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, createStyles} from "@material-ui/core/styles";
 
-
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -26,18 +25,29 @@ const useStyles = makeStyles(() =>
 );
 //styling for Paper
 function PageContentPC() {
-    
-    const classes = useStyles(); //styles for Paper component
-    
 
-   function handleClickDown()
-    {$(".combine").slideUp(560);
-    setTimeout(() => {setContent(
-    <div className="becomeMember">
-    <Grid container spacing={1}>
-    <Grid item md={12} lg={12} sm={12} xs={12}>
-    <KeyboardArrowUpIcon className="arrow-up svg_icons" onClick={handleClickUp} fontSize="large"/>
+    const classes = useStyles(); //styles for Paper component
+    const [content, setContent] = useState(<Container fluid className="becomeMember">
+    <div className="inline">
+    <div className="combine">
+    <Grid container spacing={1}  style={{paddingLeft: "7.8%"}}>
+    <Grid item md={12} lg={6} sm={12} xs={12}> 
+    <div className="wrap">
+    <h1 className="title title1">Student <br/> Developers <br/>Initiative.</h1>
+    </div>
     </Grid>
+    <Grid item md={12} lg={12} sm={12} xs={12}>
+    <div className="sub">
+    <h2>&lt;We dream tech /&gt;</h2>
+    </div>
+    </Grid>
+    </Grid>
+</div>
+</div>
+<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+ <div className="becomeMember">
+    <Grid container spacing={1}>
     <Grid item md={12} lg={6} sm={12} xs={12}>
     <div className="wrap"><h1 className="title2 text title">Become a member.</h1></div>
     </Grid>
@@ -50,54 +60,10 @@ function PageContentPC() {
     variant="contained" 
     className="register" 
     size="sm"
-    onClick={handleClickRegister}><Link to='/register'><img src={"img/group1.png"} alt="SDIlogo"></img></Link></Button>
+    ><Link to='/register'><img src={"img/group1.png"} alt="SDIlogo"></img></Link></Button>
     </Grid>
     </Grid>
-    </div>)},900);
-    }
-
-    function handleClickRegister(req){
-    
-    }
-
-    function handleClickUp(){
-        $(".becomeMember").slideUp(560);
-        setTimeout(() => {setContent(<Container fluid className="becomeMember">
-            <div className="inline">
-            <div className="combine"> 
-            <div className="wrap">
-            <h1 className="title title1">Student Developers Initiative.</h1>
-            </div>
-            <div className="sub">
-            <h2>&lt;We dream tech /&gt;</h2>
-            </div>
-
-        </div>
-        </div>
-        <div onClick={handleClickDown}>
-        <ArrowDropDownIcon className="arrow-down svg_icons" onClick={handleClickDown} fontSize="large"/>
-        </div>
-        </Container>
-        
-        );},900)
-        
-    }
-
-    const [content, setContent] = useState(<Container fluid className="becomeMember">
-    <div className="inline">
-    <div className="combine"> 
-    <div className="wrap">
-    <h1 className="title title1">Student <br/> Developers <br/>Initiative.</h1>
     </div>
-    <div className="sub">
-    <h2>&lt;We dream tech /&gt;</h2>
-    </div>
-
-</div>
-</div>
-<div onClick={handleClickDown}>
-<ArrowDropDownIcon className="arrow-down svg_icons" onClick={handleClickDown} fontSize="large"/>
-</div>
 </Container>)
      
  return(content);

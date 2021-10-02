@@ -5,7 +5,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    overflow: scroll;
 }
 .bg_image_home_mobile{
   background-image: url('back.png');

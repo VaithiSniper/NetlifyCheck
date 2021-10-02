@@ -11,8 +11,8 @@ function Header(){
   const smallerThan760 = useMediaPredicate("(max-width: 1000px)");//media-query hook  
 
   function navbarRetuner(){
-    return(<div>
-      <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
+    return(<div style={{paddingBottom:"8%"}}>
+      <Navbar fixed="top" collapseOnSelect expand="lg" bg="transparent" variant="dark">
     <Container>
     <Navbar.Brand className="justify-content-start" href="/home"><img height="80px" width="60px" src="img/sdinavbar.png" alt="sdi-logo"></img></Navbar.Brand>
     <Nav className="ml-auto justify-content-end" activeKey="/home" style={{ width: "100%" }} >
@@ -39,7 +39,7 @@ function Header(){
  </div>
   )
  }
- //navbar on mobile
+ //sidebar on mobile
 
  return(!smallerThan760?navbarRetuner():collapsedNavbarReturner())
    

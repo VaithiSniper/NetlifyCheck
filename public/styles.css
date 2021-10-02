@@ -41,8 +41,7 @@
 
 .inline {
     display: inline-block;
-    /* margin: 1rem;
-    margin-left: 2%; */
+    margin-left: -1%;
     margin-top: 3%;
 }
 .title {

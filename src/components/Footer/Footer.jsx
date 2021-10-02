@@ -64,7 +64,7 @@ function FooterPC(){
     
     const classes = useStyles(); //styles for Paper component
     return(
-        <Grid container spacing={1}>
+        <Grid container spacing={1} style={{ position: "fixed", bottom: "0"}}>
     <Grid item md={2} lg={2}>
     <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
     {DateComponent()} 
