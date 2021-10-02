@@ -46,7 +46,7 @@ function FooterMobile(){
     const classes = useStyles(); //styles for Paper component
     return(
         <Grid container spacing={1}>
-        <Grid item sm={4} xs={4} align="center">
+        <Grid item sm={12} xs={12} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
         <Button onClick={handleOpen}>Terms and conditions</Button>
 <Modal
@@ -66,7 +66,7 @@ function FooterMobile(){
 </Modal>
         </Paper>
         </Grid>
-        <Grid item sm={4} xs={4}>
+        <Grid item sm={12} xs={12}>
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
         <Button onClick={handleOpen}>Privacy policy</Button>
 <Modal
@@ -86,7 +86,7 @@ function FooterMobile(){
 </Modal>
         </Paper>
         </Grid>
-        <Grid item sm={4} xs={4} align="center">
+        <Grid item sm={12} xs={12} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}> 
         <Button onClick={handleOpen}>Refund policy</Button>
 <Modal
@@ -106,6 +106,9 @@ function FooterMobile(){
 </Modal>
         </Paper>
         </Grid>
+        <Grid item sm={12} xs={12}><Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}></Paper>  <Typography id="sub" sx={{ mt: 2 }}>
+    SDI Club, Bangalore Institute of Technology, Bangalore - 560085
+    </Typography></Grid>
         </Grid>
         )
 }
@@ -182,7 +185,11 @@ function FooterPC(){
     </Paper>
     </Grid>
     {/* Refund policy */}
+    <Grid item lg={12} md={12}><Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}></Paper>  <Typography id="sub" sx={{ mt: 2 }}>
+    SDI Club, Bangalore Institute of Technology, Bangalore - 560085
+    </Typography></Grid>
     </Grid>
+    
         )
 }
 //Component for footer on larger devices
