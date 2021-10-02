@@ -33,7 +33,8 @@ const useStyles = makeStyles(() =>
     paper: {
       textAlign: "center",
       justifyContentEnd: "center",
-      padding:"4%"
+      padding:"4%",
+      color: 'white'
     }
   })
 );
