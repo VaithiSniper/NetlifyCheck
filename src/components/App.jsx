@@ -4,6 +4,7 @@ import { useMediaPredicate } from "react-media-hook";
 //React imports
 import Foot from './Footer/Footer';
 import Header from './Header/Navbar';
+import FootPayment from './Footer/FooterPayment'
 //Basic components
 import PageContent from './Content/Landing page/PageContent';
 import Contact from './Content/Other pages/Contact Us/Contact';
@@ -29,8 +30,8 @@ function App() {
     <Route exact path="/events"><div className={!smallerThan1000?"bg_image_events":"bg_image_events_mobile"}><Header/><Events/></div></Route>
     <Route exact path="/contact"><div className={!smallerThan1000?"bg_image_contact":"bg_image_contact_mobile"}><Header/><Contact/></div></Route>
     <Route exact path="/register"><div className={!smallerThan1000?"bg_image_register":"bg_image_register_mobile"}><Header/><Register/></div></Route>
-    <Route exact path="/payment"><div className={!smallerThan1000?"bg_image_payment":"bg_image_payment_mobile"}><Header/><PaymentPortal/></div></Route>
-    <Route exact path="/payment/success"><div className={!smallerThan1000?"bg_image_payment":"bg_image_payment_mobile"}><PaymentSuccess/></div></Route>
+    <Route exact path="/payment"><div className={!smallerThan1000?"bg_image_payment":"bg_image_payment_mobile"}><Header/><PaymentPortal/><FootPayment/></div></Route>
+    <Route exact path="/payment/success"><div className={!smallerThan1000?"bg_image_payment":"bg_image_payment_mobile"}><PaymentSuccess/><FootPayment/></div></Route>
     </Switch>
     </Router>)
 }
