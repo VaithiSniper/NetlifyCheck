@@ -29,6 +29,7 @@ Shah Aditya (PR and Marketing) - 83202 79863, adityashah10may2001@gmail.com <br/
 Postal Address: Bangalore Institute of Technology, K.R Road, V.V
                 Puram, Bangalore – 560004
                 <br/>
+You can also choose to reach us at our email using the Contact Us page.<br/>
                 <strong>d.Limitation of Liability</strong><br/>
 SDI club and any of its subsidiaries or affiliates shall in no event be liable for any direct, indirect, incidental, consequential or exemplary damages. This shall include, but not be limited to damages for loss or profits, business interruption, business reputation or good will, loss of programs or information or other intangible loss arising out of the use of or the inability to use the service, or information, or any permanent or temporary cessation of such service or access to information, or the deletion or corruption of any content or information, or the failure to store any content or information. The above limitation shall apply whether or not SDI Club has been advised of or should have been aware of the possibility of such damages. In jurisdictions where the exclusion or limitation of liability for consequential or incidental damages is not allowed the liability of SDI Club is limited to the greatest extent permitted by law. <br/>
 <strong>e.Rules of Conduct</strong><br/>
