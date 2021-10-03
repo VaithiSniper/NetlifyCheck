@@ -33,7 +33,7 @@
     background-size: cover;
   }
   .bg_image_about{
-    background-image: url('about.jpg');
+    background-image: url('contact.png');
     width: 100vw;
     height: 100vh;
     background-position: center center;
@@ -41,7 +41,7 @@
     background-size: cover;
   }
   .bg_image_about_mobile{
-    background-image: url('about.jpg');
+    background-image: url('contact.png');
     height:145vh;
     width:100%;
     background-position: center center;
