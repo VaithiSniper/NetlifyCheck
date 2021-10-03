@@ -25,6 +25,7 @@ const MyButton = styled(Button)({
     boxShadow: '0 3% 5% 2% rgba(255, 105, 135, .3)',
     color: 'white',
     height: 48,
+    width: 'auto',
     margin: '0 auto', 
     display: "flex"
   });

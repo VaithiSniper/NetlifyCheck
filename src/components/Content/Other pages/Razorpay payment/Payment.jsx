@@ -122,7 +122,8 @@ function PaymentPortal() {
     <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
     <h1 className="title" style={{textAlign:"center"}}>Join SDI today.</h1>
     <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
-    On successful payment, take a screenshot of the email you receive on your registered mail ID and send it to +918320279863<br/>Check your spam folder if you don't see the email in your inbox<br/>For any queries related to payment, you can contact +918320279863 or +919902097631
+    On successful payment, take a screenshot of the email you receive on your registered mail ID and send it to +918320279863<br/>Check your spam folder if you don't see the email in your inbox<br/>
+    <h6>&lt;For any queries related to payment, you can contact +918320279863 or +919902097631&gt;</h6>
     </CardContent>
     <CardContent>
     <MyButton
