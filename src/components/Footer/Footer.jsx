@@ -3,6 +3,8 @@ import { useMediaPredicate } from "react-media-hook";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, createStyles} from "@material-ui/core/styles";
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 //npm imports
 
 let today = new Date();
@@ -34,6 +36,23 @@ function FooterMobile(){
     const classes = useStyles(); //styles for Paper component
     return(
         <Grid container spacing={1}>
+          <Grid item sm={5} xs={5} align="center">
+        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"0",paddingBottom:"15%"}}>  
+        <img height="100px" width="100px" src="img/bitlogo.png" alt="bit-logo" style={{paddingLeft:"10%"}}></img>
+        </Paper>
+        </Grid>
+        <Grid item sm={6} xs={6} align="center">
+        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"10%",paddingBottom:"15%"}}>  
+       <h5>Bangalore Institute Of Technology</h5>
+        </Paper>
+        </Grid>
+        <Grid item sm={1} xs={1} align="center">
+        <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
+        </Paper>
+        </Grid>
+        <Grid item sm={12} xs={12}>
+        <Divider light  sx={{ bgcolor: (theme) => "white"}} style={{marginBottom:"3%"}}></Divider>
+        </Grid>
         <Grid item sm={4} xs={4} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
         <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link"> 

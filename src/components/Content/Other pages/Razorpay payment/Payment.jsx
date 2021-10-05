@@ -46,7 +46,7 @@ t.json()
 )
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
-    key: 'rzp_test_fBCFA7anpNMOBh', // Enter the Key ID generated from the Dashboard
+    key: 'rzp_live_FgzyyI34xU2AQW', // Enter the Key ID generated from the Dashboard
     amount: 5000, 
     currency: 'INR',
     name: "SDI Club",

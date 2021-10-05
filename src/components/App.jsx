@@ -14,7 +14,6 @@ import PaymentPortal from './Content/Other pages/Razorpay payment/Payment';
 import Events from './Content/Other pages/Events/Events';
 import PaymentSuccess from './Content/Other pages/Razorpay payment/PaymentSuccess';
 import TandC from './Content/Other pages/T&C/TandC';
-import Temp from './Content/Other pages/Register/Temp';
 //Pages
 
 import "./App.css";
