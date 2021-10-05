@@ -38,7 +38,7 @@ function FooterMobile(){
         <Grid container spacing={1}>
           <Grid item sm={5} xs={5} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"0",paddingBottom:"15%"}}>  
-        <img height="100px" width="100px" src="img/bitlogo.png" alt="bit-logo" style={{paddingLeft:"10%"}}></img>
+        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer"><img height="100px" width="100px" src="img/bitlogo.png" alt="bit-logo" style={{paddingLeft:"10%"}}></img></a>
         </Paper>
         </Grid>
         <Grid item sm={6} xs={6} align="center">
