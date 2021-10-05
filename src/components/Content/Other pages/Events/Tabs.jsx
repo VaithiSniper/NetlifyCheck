@@ -1,25 +1,27 @@
 import * as React from "react";
+//react
+
 import Box from "@mui/material/Box";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+//material ui imports
 
 export default function ScrollableTabsButtonVisible(props) {
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const funct = props.tabParentCallbackName;
-  const fn = (event) => {
-    const tabName = event.target.classList[4];
-    funct(tabName);
-  };
+//Tab state
+//callback
+
+
+   
 
   return (
     <Box
       sx={{
         flexGrow: 1,
-        maxWidth: 720,
+        maxWidth: 300,
         bgcolor: "transparent",
         mx: "auto",
         paddingBottom: "3%"
@@ -38,13 +40,9 @@ export default function ScrollableTabsButtonVisible(props) {
           color:"white"
         }}
       >
-        <Tab label="Chess" style={{color:"white"}} onClick={fn} />
-        <Tab label="Hackathon" style={{color:"white"}} onClick={fn} />
-        <Tab label="ChessA" style={{color:"white"}} onClick={fn} />
-        <Tab label="ChessB" style={{color:"white"}} onClick={fn} />
-        <Tab label="ChessC" style={{color:"white"}} onClick={fn} />
-        <Tab label="HackathonB" style={{color:"white"}} onClick={fn} />
-        <Tab label="HackathonC" style={{color:"white"}} onClick={fn} />
+        {props.events.map((event)=>{
+        return(<Tab label={event} className={event} style={{color:"white"}}></Tab>);
+        })}
       </Tabs>
     </Box>
   );

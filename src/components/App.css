@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: scroll;
+    overflow-x: hidden;
 }
 .bg_image_home_mobile{
   background-image: url('back.png');
