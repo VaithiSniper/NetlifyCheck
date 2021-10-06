@@ -4,7 +4,6 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, createStyles} from "@material-ui/core/styles";
 import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
 //npm imports
 
 let today = new Date();
@@ -36,9 +35,10 @@ function FooterMobile(){
     const classes = useStyles(); //styles for Paper component
     return(
         <Grid container spacing={1}>
-          <Grid item sm={5} xs={5} align="center">
+        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer">
+        <Grid item sm={5} xs={5} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"0",paddingBottom:"15%"}}>  
-        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer"><img height="100px" width="100px" src="img/bitlogo.png" alt="bit-logo" style={{paddingLeft:"10%"}}></img></a>
+        <img height="100px" width="100px" src="img/bitlogo.png" alt="bit-logo" style={{paddingLeft:"10%"}}></img>
         </Paper>
         </Grid>
         <Grid item sm={6} xs={6} align="center">
@@ -46,6 +46,7 @@ function FooterMobile(){
        <h5>Bangalore Institute Of Technology</h5>
         </Paper>
         </Grid>
+        </a>
         <Grid item sm={1} xs={1} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
         </Paper>
