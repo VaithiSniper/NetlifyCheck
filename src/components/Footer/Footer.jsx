@@ -58,21 +58,21 @@ function FooterMobile(){
         </Grid>
         <Grid item sm={4} xs={4} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-        <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link"> 
+        <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link" target="_blank" rel="noopener noreferrer"> 
         <div className="insta"></div>
         </a>
         </Paper>
         </Grid>
         <Grid item sm={4} xs={4}>
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-        <a href="https://twitter.com/sdi_bit?s=08">
+        <a href="https://twitter.com/sdi_bit?s=08" target="_blank" rel="noopener noreferrer">
         <div className="twitter"><a href="https://twitter.com/sdi_bit?s=08"/></div>
         </a>
         </Paper>
         </Grid>
         <Grid item sm={4} xs={4} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}> 
-        <a href="https://www.linkedin.com/company/student-developers-initiative">  
+        <a href="https://www.linkedin.com/company/student-developers-initiative" target="_blank" rel="noopener noreferrer">  
         <div className="linkedin"></div>
         </a>
         </Paper>
@@ -99,26 +99,25 @@ function FooterPC(){
     {/* Padding grid */}
     <Grid item md={1} lg={1}>
     <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>
-    <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link">  
+    <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link" target="_blank" rel="noopener noreferrer">  
     <div className="insta"></div>
     </a>
     </Paper>
     </Grid>
     <Grid item md={1} lg={1}>
     <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
-    <a href="https://twitter.com/sdi_bit?s=08">
+    <a href="https://twitter.com/sdi_bit?s=08" target="_blank" rel="noopener noreferrer">
     <div className="twitter"></div>
     </a>
     </Paper>
     </Grid>
     <Grid item md={1} lg={1}>
     <Paper className={classes.paper} elevation={1} style={{backgroundColor:"transparent",color:"white"}}>   
-    <a href="https://www.linkedin.com/company/student-developers-initiative">
+    <a href="https://www.linkedin.com/company/student-developers-initiative" target="_blank" rel="noopener noreferrer">
     <div className="linkedin"></div>
     </a>
     </Paper>
     </Grid>
-    {/* <div className="socials" style={{float: "right",textAlign:"center",marginRight:"10%",marginTop: "0",paddingTop: "0"}}> */}
     </Grid>
         )
 }
