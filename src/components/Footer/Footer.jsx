@@ -44,7 +44,7 @@ function FooterMobile(){
         </Grid>
         <Grid item sm={6} xs={6} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"10%",paddingBottom:"15%"}}>  
-        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer">
+        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer" style={{color:"white",textDecoration:"none"}}>
         <h5>Bangalore Institute Of Technology</h5>
         </a>
         </Paper>
