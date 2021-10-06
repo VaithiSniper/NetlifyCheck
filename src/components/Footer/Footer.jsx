@@ -35,18 +35,20 @@ function FooterMobile(){
     const classes = useStyles(); //styles for Paper component
     return(
         <Grid container spacing={1}>
-        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer">
         <Grid item sm={5} xs={5} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"0",paddingBottom:"15%"}}>  
+        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer">
         <img height="100px" width="100px" src="img/bitlogo.png" alt="bit-logo" style={{paddingLeft:"10%"}}></img>
+        </a>
         </Paper>
         </Grid>
         <Grid item sm={6} xs={6} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white",paddingTop:"10%",paddingBottom:"15%"}}>  
-       <h5>Bangalore Institute Of Technology</h5>
+        <a href="https://bit-bangalore.edu.in/" target="_blank" rel="noopener noreferrer">
+        <h5>Bangalore Institute Of Technology</h5>
+        </a>
         </Paper>
         </Grid>
-        </a>
         <Grid item sm={1} xs={1} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
         </Paper>

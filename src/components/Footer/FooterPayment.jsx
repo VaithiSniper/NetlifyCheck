@@ -19,8 +19,6 @@ const style = {
 };
 //box styling
 
-let today = new Date();
-// //Date function related
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -37,10 +35,6 @@ const useStyles = makeStyles(() =>
 //paper styling related
 
 function FooterMobile(){
-    
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
     const classes = useStyles(); //styles for Paper component
     return(
         <Grid container spacing={1} style={{position: "absolute", top: "65vh"}}>
@@ -55,10 +49,6 @@ function FooterMobile(){
 //Component for footer on mobile devices
 
 function FooterPC(){
-    
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
     const classes = useStyles(); //styles for Paper component
     return(
       <Grid container spacing={1} style={{ position: "fixed", bottom: "0"}}>
