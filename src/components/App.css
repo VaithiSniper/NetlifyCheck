@@ -72,7 +72,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    overflow: scroll;
   }
   .bg_image_team_mobile{
     background-image: url('contact.png');

@@ -29,6 +29,8 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
+
+
   return (
     <Card sx={{ maxWidth: 720, mx: "auto" }} style={{textAlign: "center"}}>
       <CardHeader
@@ -48,7 +50,7 @@ export default function RecipeReviewCard(props) {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {props.desc}
+          {props.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

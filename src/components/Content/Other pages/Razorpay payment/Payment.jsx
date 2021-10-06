@@ -62,7 +62,7 @@ t.json()
           const payment_id=response.razorpay_payment_id;
           await updateDoc(docRef, {paymentStatus: true,payment_id:payment_id});
           //update current user's payment status to true
-          falsePurger();
+          // falsePurger();
           //to clear documents with fasle
           const paymentMail= JSON.stringify({
               email: paymentSendEmail,

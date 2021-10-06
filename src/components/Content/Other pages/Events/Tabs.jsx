@@ -1,10 +1,10 @@
 import * as React from "react";
 //react
-
 import Box from "@mui/material/Box";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 //material ui imports
+
 
 export default function ScrollableTabsButtonVisible(props) {
   const [value, setValue] = React.useState(0);
@@ -13,10 +13,7 @@ export default function ScrollableTabsButtonVisible(props) {
   };
 //Tab state
 //callback
-
-
-   
-
+console.log(props.events);
   return (
     <Box
       sx={{
@@ -40,9 +37,6 @@ export default function ScrollableTabsButtonVisible(props) {
           color:"white"
         }}
       >
-        {props.events.map((event)=>{
-        return(<Tab label={event} className={event} style={{color:"white"}}></Tab>);
-        })}
       </Tabs>
     </Box>
   );

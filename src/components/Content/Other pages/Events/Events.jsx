@@ -12,8 +12,8 @@ import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 //firestore imports
 
-let events = [];
-//events array
+let arrayOfEvents = [];
+//events array, stores all events from firebase
 const firebaseApp = initializeApp({
     apiKey: 'AIzaSyAZrvXqspVdjVgWWtSmjp7UKpjHotxvJD0',
     authDomain: 'sdic-22b69.firebaseapp.com',
@@ -21,22 +21,22 @@ const firebaseApp = initializeApp({
   });
   //firebase and firestore setup
   const db = getFirestore();
+
+//firebase events retrival
 async function retrival()
 {
 //collection ref
-const querySnapshot = await getDocs(collection(db, "events"));
-//snapshot to use for printing
+const querySnapshot = await getDocs(collection(db, "events_test"));
 querySnapshot.forEach((doc) => {
-events.push(doc.data().name);
+  // doc.data() is never undefined for query doc snapshots
+  const data = doc.data();
+  arrayOfEvents.push(data);
 });
-
 }
-//firebase events retrival
-
 function Events() {
-    retrival();
+  
+
    //to populate array
-   console.log(events);
     return(
         <Container>
         <h1 className="events_title">
@@ -44,13 +44,8 @@ function Events() {
         </h1>
         <Grid container spacing={2}>
       <Grid item lg={12} md={12} sm={12} xs={12}>
-        <Tabs events={events}/>
+        <Tabs/>
         <Card
-          name="Random"
-          date="Random"
-          desc="Random"
-          prize="Random"
-          imgUrl="Random"
         />
       </Grid>
     </Grid>
