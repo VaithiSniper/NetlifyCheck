@@ -43,7 +43,7 @@ function FooterMobile(){
     const handleClose = () => setOpen(false);
     const classes = useStyles(); //styles for Paper component
     return(
-        <Grid container spacing={1}>
+        <Grid container spacing={1} style={{position: "absolute", top: "65vh"}}>
         <Grid item sm={12} xs={12} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
         <Link to="/terms" style={{color:"white"}} target="_blank" rel="noopener noreferrer">Terms and conditions,Privacy policy and Refund policy</Link>
