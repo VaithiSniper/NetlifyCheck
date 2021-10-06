@@ -142,7 +142,7 @@ function PaymentPortal() {
   return(
     <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center"}}>
-        <h1 className="title" style={{textAlign:"center"}}>You need to fill the registration form</h1>
+        <h1 className="titlePayment" style={{textAlign:"center"}}>You need to fill the registration form</h1>
         <CardContent>
         <MyButton
         variant="contained"
