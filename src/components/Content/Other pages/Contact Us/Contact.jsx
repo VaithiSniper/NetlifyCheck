@@ -53,7 +53,7 @@ const MyButton = styled(Button)({
 //--------------------------------------------------------------------------------------------------------------------------------
 
 async function grievanceCreator(userData) {
-  const newGrievanceRef = doc(collection(db, "grievance"));
+  const newGrievanceRef = doc(collection(db, "grievances"));
   await  setDoc(newGrievanceRef, {
       fName: userData.fName,
       lName : userData.lName,
