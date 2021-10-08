@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 
 function Component(){
     return(<Grid container spacing={1} align="center">
+      <Grid container style={{height:"100vh"}} spacing={1} align="center">
       <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h2" style={{color: 'white'}}>Administrative Team</Typography></Grid>
       <Grid item lg={3} md={3} sm={12} xs={12}>
       <Card sx={{ maxWidth: 345 }}>
@@ -80,7 +81,9 @@ function Component(){
       </CardContent>
     </Card>
       </Grid>
+      </Grid>
       {/*admin team*/}
+      <Grid container spacing={1} style={{height:"100vh"}} align="center">
       <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h2" style={{color: 'white'}}>Competitive Programming Team</Typography></Grid>
       <Grid item lg={3} md={3} sm={12} xs={12}>
       <Card sx={{ maxWidth: 345 }}>
@@ -154,7 +157,9 @@ function Component(){
       </CardContent>
     </Card>
       </Grid>
+      </Grid>
       {/*cp team*/}
+      <Grid container spacing={1} style={{height:"100vh"}} align="center">
       <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h2" style={{color: 'white'}}>Projects Team</Typography></Grid>
       <Grid item lg={4} md={4} sm={12} xs={12}>
       <Card sx={{ maxWidth: 345 }}>
@@ -210,7 +215,9 @@ function Component(){
       </CardContent>
     </Card>
       </Grid>
+      </Grid>
       {/*projects team*/}
+      <Grid container spacing={1} style={{height:"100vh"}} align="center">
       <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h2" style={{color: 'white'}}>Editorial Team</Typography></Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
       <Card sx={{ maxWidth: 345 }}>
@@ -248,7 +255,9 @@ function Component(){
       </CardContent>
     </Card>
       </Grid>
+      </Grid>
       {/*editorial team*/}
+      <Grid container spacing={1} style={{height:"100vh"}} align="center">
       <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h2" style={{color: 'white'}}>Event Co-ordinator Team</Typography></Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
       <Card sx={{ maxWidth: 345 }}>
@@ -286,7 +295,9 @@ function Component(){
       </CardContent>
     </Card>
       </Grid>
+      </Grid>
       {/*Event Co-ordinator Team*/}
+      <Grid container spacing={1} style={{height:"100vh"}} align="center">
       <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h2" style={{color: 'white'}}>PR & Marketing Team</Typography></Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
       <Card sx={{ maxWidth: 345 }}>
@@ -325,6 +336,7 @@ function Component(){
     </Card>
       </Grid>
       {/*PR & Marketing Team*/}
+      </Grid>
       </Grid>
     )
     }
