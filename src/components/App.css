@@ -167,5 +167,37 @@
       background-position: 0% 50%;
     }
   }
- 
- 
+  .bg_image_team{
+    background: linear-gradient(-45deg, #6B6B6B,#474747, #292929, #171717, #000000);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 100vh;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .bg_image_team_mobile{
+    background: linear-gradient(-45deg, #DCDCDC,#808080, #808080, #696969, #000000);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 160vh;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

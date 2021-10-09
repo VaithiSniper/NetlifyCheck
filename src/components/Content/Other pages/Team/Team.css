@@ -1,0 +1,14 @@
+.teamSections{
+    height:100vh;
+    scroll-snap-align: center;
+}
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: thin;
+    scrollbar-color : #4F4E4F #010001;
+  }
+  .page-container{
+      height: 80vh;
+  }
