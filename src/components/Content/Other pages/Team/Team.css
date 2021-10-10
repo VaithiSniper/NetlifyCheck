@@ -1,9 +1,9 @@
 .teamSections{
-    height:100vh;
+    height:80vh;
     scroll-snap-align: center;
 }
 .scroll-container {
-    height: 100vh;
+    height: 80vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: thin;
@@ -11,4 +11,10 @@
   }
   .page-container{
       height: 80vh;
+  }
+  .cards:hover{
+        transform: translateY(0) scale(1.01);
+        border: 2px solid#bdd5ea;
+        border-radius: 7px;
+
   }

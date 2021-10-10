@@ -1,19 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useMediaPredicate } from "react-media-hook";
 import './Team.css';
+import Accordion from './Accordions';
 
-function Component(){
+function Component() {
+  const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//hook for media-query
+
+function ComponentPC(){
     return(
     <Grid container className="page-container">
     <Grid container spacing={1} align="center" className="scroll-container">
       <Grid container spacing={1} align="center" className="teamSections">
       <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Administrative Team</Typography></Grid>
       <Grid item lg={3} md={3} sm={12} xs={12}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -31,7 +36,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -49,7 +54,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -67,7 +72,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -89,7 +94,7 @@ function Component(){
       <Grid container spacing={1} align="center"  className="teamSections">
       <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Competitive Programming Team</Typography></Grid>
       <Grid item lg={3} md={3} sm={12} xs={12}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -107,7 +112,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -125,7 +130,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -143,7 +148,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -165,7 +170,7 @@ function Component(){
       <Grid container spacing={1} align="center" className="teamSections" >
       <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Projects Team</Typography></Grid>
       <Grid item lg={4} md={4} sm={12} xs={12}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -183,7 +188,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={4} md={4} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -201,7 +206,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={4} md={4} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -223,7 +228,7 @@ function Component(){
       <Grid container spacing={1} className="teamSections" align="center">
       <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Editorial Team</Typography></Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -241,7 +246,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -263,7 +268,7 @@ function Component(){
       <Grid container spacing={1} align="center" className="teamSections" >
       <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Event Co-ordinator Team</Typography></Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -281,7 +286,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -303,7 +308,7 @@ function Component(){
       <Grid container spacing={1} align="center" className="teamSections" >
       <Grid item lg={12} md={12} sm={12} xs={12}  ><Typography variant="h3" style={{color: 'white'}}>PR & Marketing Team</Typography></Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -321,7 +326,7 @@ function Component(){
     </Card>
       </Grid>
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="200"
@@ -345,4 +350,15 @@ function Component(){
 
     )
     }
+    //component for pc
+    function ComponentMobile(){
+      return(
+        <Grid container spacing={1} align="center" className="teamSections">
+        <Accordion/>
+        </Grid>
+      )
+    }
+
+    return(smallerThan1000?ComponentMobile():ComponentPC());
+}
 export default Component;
