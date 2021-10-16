@@ -1,24 +1,46 @@
-import React, {useContext} from 'react';
-import Grid from "@mui/material/Grid";
+import React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Card from "@mui/material/Card";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { useMediaPredicate } from "react-media-hook";
-import './Team.css';
-import Accordion from './Accordions';
+import Grid from "@mui/material/Grid";
 
-function Component() {
-  const smallerThan1000 = useMediaPredicate("(max-width: 1000px)");//hook for media-query
+export default function ControlledAccordions() {
+  const [expanded, setExpanded] = React.useState(false);
 
-function ComponentPC(){
-    return(
-    <Grid container className="page-container">
-    <Grid container spacing={1} align="center" className="scroll-container">
-      <Grid container spacing={1} align="center" className="teamSections">
-      <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Administrative Team</Typography></Grid>
-      <Grid item lg={3} md={3} sm={12} xs={12}>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
+  return (
+    <div>
+      <Accordion expanded={expanded === 'panel10'} onChange={handleChange('panel12')} style={{backgroundColor:"transparent",visibility:"hidden"}}>
+        <AccordionDetails>
+          <Typography>
+          Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
+            amet egestas eros, vitae egestas augue. Duis vel est augue.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            Administrative Team
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        
+        <Grid item lg={3} md={3} sm={12} xs={12}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -35,8 +57,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+    
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -53,8 +76,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -71,8 +95,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+
+      <Grid item sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -89,12 +114,21 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      </Grid>
-      {/*admin team*/}
-      <Grid container spacing={1} align="center"  className="teamSections">
-      <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Competitive Programming Team</Typography></Grid>
-      <Grid item lg={3} md={3} sm={12} xs={12}>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+        </AccordionDetails>
+      </Accordion>
+{/* administrative team */}
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2bh-content"
+          id="panel2bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>Competitive Programming Team</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+
+        <Grid item lg={3} md={3} sm={12} xs={12}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -111,8 +145,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -129,8 +164,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+
+ <Grid item lg={3} md={3} sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -147,8 +183,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -165,12 +202,24 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      </Grid>
-      {/*cp team*/}
-      <Grid container spacing={1} align="center" className="teamSections" >
-      <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Projects Team</Typography></Grid>
-      <Grid item lg={4} md={4} sm={12} xs={12}>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+
+        </AccordionDetails>
+      </Accordion>
+{/* competitive programming */}
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel3bh-content"
+          id="panel3bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            Projects Team
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+
+        <Grid item lg={4} md={4} sm={12} xs={12}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -187,8 +236,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={4} md={4} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -205,8 +255,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={4} md={4} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -223,12 +274,24 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      </Grid>
+    
+        </AccordionDetails>
+      </Accordion>
       {/*projects team*/}
-      <Grid container spacing={1} className="teamSections" align="center">
-      <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Editorial Team</Typography></Grid>
-      <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel4bh-content"
+          id="panel4bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            Editorial Team
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+
+        <Grid item lg={6} md={6} sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -245,8 +308,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+
+       <Grid item lg={6} md={6} sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -263,12 +327,24 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      </Grid>
-      {/*editorial team*/}
-      <Grid container spacing={1} align="center" className="teamSections" >
-      <Grid item lg={12} md={12} sm={12} xs={12} ><Typography variant="h3" style={{color: 'white'}}>Event Co-ordinator Team</Typography></Grid>
-      <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+    
+        </AccordionDetails>
+      </Accordion>
+      {/* editorial team */}
+      <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel5bh-content"
+          id="panel5bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+          Event Co-ordinator Team
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+
+        <Grid item lg={6} md={6} sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -285,8 +361,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -303,12 +380,24 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
-      </Grid>
-      {/*Event Co-ordinator Team*/}
-      <Grid container spacing={1} align="center" className="teamSections" >
-      <Grid item lg={12} md={12} sm={12} xs={12}  ><Typography variant="h3" style={{color: 'white'}}>PR & Marketing Team</Typography></Grid>
-      <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+    
+        </AccordionDetails>
+      </Accordion>
+      {/* Event coordinators team */}
+      <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel6bh-content"
+          id="panel6bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+          PR & Marketing Team
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+
+        <Grid item lg={6} md={6} sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -325,8 +414,9 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+
       <Grid item lg={6} md={6} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <Card className="cards" sx={{ maxWidth: 340}}>
       <CardMedia
         component="img"
         height="200"
@@ -343,22 +433,18 @@ function ComponentPC(){
       </CardContent>
     </Card>
       </Grid>
+    
+        </AccordionDetails>
+      </Accordion>
       {/*PR & Marketing Team*/}
-      </Grid>
-      </Grid>
-      </Grid>
-
-    )
-    }
-    //component for pc
-    function ComponentMobile(){
-      return(
-        <Grid container spacing={1} align="center" className="teamSections">
-        <Accordion/>
-        </Grid>
-      )
-    }
-
-    return(smallerThan1000?ComponentMobile():ComponentPC());
+      <Accordion expanded={expanded === 'panel10'} onChange={handleChange('panel12')} style={{backgroundColor:"transparent",visibility:"hidden"}}>
+        <AccordionDetails>
+          <Typography>
+          Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
+            amet egestas eros, vitae egestas augue. Duis vel est augue.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
+  );
 }
-export default Component;

@@ -37,6 +37,8 @@ console.log(props.events);
           color:"white"
         }}
       >
+      <Tab label="tab 1" style={{color: "white"}}/>
+      <Tab label="tab 2" style={{color: "white"}}/>
       </Tabs>
     </Box>
   );

@@ -35,7 +35,8 @@ querySnapshot.forEach((doc) => {
 }
 function Events() {
   
-
+   retrival();
+   console.log(arrayOfEvents[0]);
    //to populate array
     return(
         <Container>
