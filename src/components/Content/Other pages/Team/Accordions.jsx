@@ -145,7 +145,7 @@ export default function ControlledAccordions() {
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-        Vishal Gupta
+        Vishal Sachan
         </Typography>
         <Typography variant="sub" color="text.secondary">
          Domain head of CP
