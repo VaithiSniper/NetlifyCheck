@@ -31,9 +31,16 @@ arrayOfEvents.push(data);
 })
 
 }
-function Events() {
+class Events extends React.Component {
 
- useEffect(retrival,[]);
+  constructor() {
+    super();
+    this.state={data:""};
+  }
+  componentDidMount() {
+    useEffect(retrival,[]);
+  }
+
  
     if(arrayOfEvents==null)
     return(
