@@ -10,22 +10,25 @@
   font-size: 100%;
   font-family: 'Merriweather Sans', sans-serif;
   color: white;
+
+  line-height: 2rem;
 }
 .p1
 {
   display: block;
   float:left;
   width: 100%;
-  padding:2rem;
+  padding:1.2rem;
 }
 .scroll_left{
     animation: slide-in-left 1s ease-in-out both;
 }
 .right_about_us
 {
-  font-size: 100%;
+  font-size: 130%;
   font-family: 'Merriweather Sans', sans-serif;
   color: white;
+  line-height: 2rem;
 }
 .p2{
   display:block;
