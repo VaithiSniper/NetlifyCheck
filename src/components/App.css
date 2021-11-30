@@ -168,10 +168,14 @@
     }
   }
   .bg_image_team{
-    background: linear-gradient(45deg, #fdc5f5,#f7aef8, #b388eb, #8093f1,#72ddf7);
+    /* background: linear-gradient(45deg, #fdc5f5,#f7aef8, #b388eb, #8093f1,#72ddf7);
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
-    height: 100vh;
+    height: 100vh; */
+    background-color: #000000;
+    background-image: url("black-linen-2.png");
+    /* background-color: rgb(104, 104, 104); */
+
   }
   @keyframes gradient {
     0% {
