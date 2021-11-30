@@ -32,9 +32,6 @@ arrayOfEvents.push(data);
 
 }
 function Events() {
-
- useEffect(retrival,[]);
- 
     if(arrayOfEvents==null)
     return(
       <button>Click</button>
@@ -47,8 +44,7 @@ return(<Container>
   <Grid container spacing={2}>
 <Grid item lg={12} md={12} sm={12} xs={12}>
   <Tabs/>
-  <Card
-  />
+  <Card/>
 </Grid>
 </Grid>
   </Container>)
