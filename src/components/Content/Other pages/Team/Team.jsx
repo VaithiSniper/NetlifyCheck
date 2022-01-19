@@ -22,24 +22,6 @@ function ComponentPC(){
       <CardMedia
         component="img"
         height="200"
-        image="img/asp.png"
-        alt="Akhouri Soumya Prakash"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
-        Akhouri Soumya Prakash
-        </Typography>
-        <Typography variant="sub" color="text.secondary">
-         VP of projects
-        </Typography>
-      </CardContent>
-    </Card>
-      </Grid>
-      <Grid item lg={3} md={3} sm={12} xs={12} center>
-      <Card className="cards" sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="200"
         image="img/nandeesha.png"
         alt="Nandeesha K"
       />
@@ -51,6 +33,25 @@ function ComponentPC(){
          President of SDI
         </Typography>
       </CardContent>
+    </Card>
+      </Grid>
+      <Grid item lg={3} md={3} sm={12} xs={12} center>
+      <Card className="cards" sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        height="200"
+        image="img/asp.png"
+        alt="Akhouri Soumya Prakash"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h6" component="div">
+        Akhouri Soumya Prakash
+        </Typography>
+        <Typography variant="sub" color="text.secondary">
+         VP of projects
+        </Typography>
+      </CardContent>
+      
     </Card>
       </Grid>
       <Grid item lg={3} md={3} sm={12} xs={12} center>
@@ -103,7 +104,7 @@ function ComponentPC(){
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-        Vishal Gupta
+        Vishal Sachan
         </Typography>
         <Typography variant="sub" color="text.secondary">
          Domain head of CP

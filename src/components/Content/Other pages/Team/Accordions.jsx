@@ -18,7 +18,15 @@ export default function ControlledAccordions() {
 
   return (
     <div>
-      <Accordion expanded={expanded === 'panel10'} onChange={handleChange('panel12')} style={{backgroundColor:"transparent",visibility:"hidden"}}>
+      <Accordion expanded={expanded === 'panel10'} onChange={handleChange('panel12')} style={{backgroundColor:"transparent",color:"white"}}>
+      <AccordionSummary
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0,fontSize: 40,fontFamily: 'Aileron'}}>
+           Meet the team
+          </Typography>
+        </AccordionSummary>
         <AccordionDetails>
           <Typography>
           Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
@@ -27,7 +35,7 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} style={{margin:"5% auto"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -117,7 +125,7 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
 {/* administrative team */}
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}  style={{margin:"5% auto"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
@@ -137,7 +145,7 @@ export default function ControlledAccordions() {
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-        Vishal Gupta
+        Vishal Sachan
         </Typography>
         <Typography variant="sub" color="text.secondary">
          Domain head of CP
@@ -206,7 +214,7 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
 {/* competitive programming */}
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}  style={{margin:"5% auto"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
@@ -278,7 +286,7 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
       {/*projects team*/}
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}  style={{margin:"5% auto"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
@@ -331,7 +339,7 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
       {/* editorial team */}
-      <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+      <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}  style={{margin:"5% auto"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel5bh-content"
@@ -384,7 +392,7 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
       {/* Event coordinators team */}
-      <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+      <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}  style={{margin:"5% auto"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel6bh-content"
@@ -437,14 +445,6 @@ export default function ControlledAccordions() {
         </AccordionDetails>
       </Accordion>
       {/*PR & Marketing Team*/}
-      <Accordion expanded={expanded === 'panel10'} onChange={handleChange('panel12')} style={{backgroundColor:"transparent",visibility:"hidden"}}>
-        <AccordionDetails>
-          <Typography>
-          Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
     </div>
   );
 }
