@@ -8,12 +8,12 @@ import Tab from "@mui/material/Tab";
 
 export default function ScrollableTabsButtonVisible(props) {
   const [value, setValue] = React.useState(0);
+  var i=0;
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 //Tab state
 //callback
-console.log(props.events);
   return (
     <Box
       sx={{
@@ -24,6 +24,7 @@ console.log(props.events);
         paddingBottom: "3%"
       }}
     >
+    
       <Tabs
         value={value}
         onChange={handleChange}
@@ -37,9 +38,9 @@ console.log(props.events);
           color:"white"
         }}
       >
-      <Tab label="tab 1" style={{color: "white"}}/>
-      <Tab label="tab 2" style={{color: "white"}}/>
+        {["event1","event2","event3","event4","event5"].map((item)=><Tab label={item} key={i++} style={{color: "white"}}/>)}
       </Tabs>
+
     </Box>
   );
 }
