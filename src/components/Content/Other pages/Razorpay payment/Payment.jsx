@@ -64,6 +64,17 @@ t.json()
           //update current user's payment status to true
           // falsePurger();
           //to clear documents with fasle
+          const result =  axios.post('https://sdi-backend-serverless.vercel.app/api/payment/capture', JSON.stringify({paymentId:payment_id}), {
+            headers: {
+              
+              'Content-Type': 'application/json'
+            }
+          })
+          .then((response) => {
+            console.log(response);
+          }, (error) => {
+            console.log(error);
+          });
           const paymentMail= JSON.stringify({
               email: paymentSendEmail,
               payment_id: payment_id
