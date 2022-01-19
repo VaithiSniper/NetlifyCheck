@@ -27,7 +27,7 @@ function App() {
     return(<Router>
     <Switch>
     <Route exact path="/"><Redirect to='/home'/></Route>
-    <Route exact path="/home"><div className={!smallerThan1000?"bg_image_home":"bg_image_home_mobile"}><Header/><Temp/><Foot/></div></Route>
+    <Route exact path="/home"><div className={!smallerThan1000?"bg_image_home":"bg_image_home_mobile"}><Header/><PageContent/><Foot/></div></Route>
     <Route exact path="/about"><div className={!smallerThan1000?"bg_image_about":"bg_image_about_mobile"}><Header/><About/></div></Route>
     <Route exact path="/team"><div className={!smallerThan1000?"bg_image_team":"bg_image_team_mobile"}><Header/><Team/></div></Route>
     <Route exact path="/events"><div className={!smallerThan1000?"bg_image_events":"bg_image_events_mobile"}><Header/><Temp/></div></Route>

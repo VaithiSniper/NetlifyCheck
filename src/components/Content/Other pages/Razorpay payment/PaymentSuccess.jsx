@@ -26,6 +26,7 @@ function PaymentSuccess(){
         <h3 className="titlePayment" style={{textAlign:"center",color:"white",fontSize:"200%",textDecoration:"underline"}}>Payment Successful!</h3>
         <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
         Looking forward to your growth here at SDI!
+        <h6><br/>Send a screenshot of your mail to +918320279863<br/>&lt;For any queries related to payment, you can contact +918320279863 or +919902097631&gt;<br/></h6>    
         <MyButton
         variant="contained"
         size="large"

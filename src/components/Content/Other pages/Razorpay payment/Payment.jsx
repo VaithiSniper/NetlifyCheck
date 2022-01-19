@@ -46,7 +46,7 @@ t.json()
 )
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
-    key: 'rzp_live_FgzyyI34xU2AQW', // Enter the Key ID generated from the Dashboard
+    key: 'rzp_live_MCwPisHf3BQRAQ', // Enter the Key ID generated from the Dashboard
     amount: 5000, 
     currency: 'INR',
     name: "SDI Club",
@@ -64,7 +64,7 @@ t.json()
           //update current user's payment status to true
           // falsePurger();
           //to clear documents with fasle
-          axios.post('https://sdi-backend-serverless.vercel.app/api/payment/capture', JSON.stringify({paymentId:payment_id}), {
+          axios.post('https://sdi-backend-serverless.vercel.app/api/paymentCapture', JSON.stringify({paymentId:payment_id}), {
             headers: {
               
               'Content-Type': 'application/json'
