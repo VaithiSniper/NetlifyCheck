@@ -23,7 +23,7 @@ function PaymentSuccess(){
     return(
         <Container>
         <Card variant="outline" style={{background:"transparent",textAlign:"center",padding:"10%"}}>
-        <h1 className="title" style={{textAlign:"center",fontSize:"400%",color:"white",textDecoration:"underline"}}>Payment Successful!</h1>
+        <h3 className="titlePayment" style={{textAlign:"center",color:"white",fontSize:"200%",textDecoration:"underline"}}>Payment Successful!</h3>
         <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
         Looking forward to your growth here at SDI!
         <MyButton

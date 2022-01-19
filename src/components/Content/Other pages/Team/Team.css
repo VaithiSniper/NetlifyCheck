@@ -1,3 +1,7 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+}
 .teamSections{
     height:80vh;
     scroll-snap-align: center;

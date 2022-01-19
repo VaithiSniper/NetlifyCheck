@@ -82,15 +82,10 @@ t.json()
           });
           setTimeout(()=>{
             window.location.replace("/payment/success");
-          },5000);
+          },7000);
     // switch to payment success page
         },
     //--------------------------------------------------------------------------------------------------------------------------------
-    prefill: {
-        "name": "Vaithee",
-        "email": "vaithi.genghiskan@gmail.com",
-        "contact": "8618560485",
-    },
     notes: {
         "address": "SDI Bangalore"
     },
