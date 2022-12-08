@@ -31,7 +31,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        {/* <Route exact path='/'>
+        <Route exact path='/'>
           <Redirect to='/home' />
         </Route>
         <Route exact path='/home'>
@@ -119,8 +119,8 @@ function App() {
             <PaymentSuccess />
             <FootPayment />
           </div>
-        </Route> */}
-        <Route exact path='/maintenance'>
+        </Route>
+        {/* <Route exact path='/maintenance'>
           <div
             className={
               !smallerThan1000 ? "bg_image_payment" : "bg_image_payment_mobile"
@@ -134,10 +134,10 @@ function App() {
               Under Maintenance
             </h1>
           </div>
-        </Route>
-        <Route exact path='/'>
+        </Route> */}
+        {/* <Route exact path='/'>
           <Redirect to='/maintenance' />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );
