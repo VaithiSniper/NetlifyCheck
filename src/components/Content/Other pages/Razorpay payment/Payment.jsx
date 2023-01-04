@@ -41,8 +41,7 @@ async function displayRazorPay(){
   const res = await loadRazorPay();
   if(!res)
   alert('Error loading SDK. Are you online?');
-    const data = axios.post('https://sdi-backend-serverless.vercel.app/api/payment').then((t) =>
-t.json()
+    const data = axios.post('https://sdi-backend-serverless.vercel.app/api/payment').then((t) => {console.log(t)}
 )
 //--------------------------------------------------------------------------------------------------------------------------------
   var options = {
@@ -129,7 +128,7 @@ function PaymentPortal() {
     <h1 className="title" style={{textAlign:"center"}}>Join SDI today.</h1>
     <CardContent className="sub" style={{color:"white",fontSize:"200%"}}>
     On successful payment, take a screenshot of the email you receive on your registered mail ID and send it to +918320279863<br/>Check your spam folder if you don't see the email in your inbox<br/>
-    <h6>&lt;For any queries related to payment, you can contact +918320279863 or +919902097631&gt;</h6>
+    <h6>&lt;For any queries related to payment, you can contact +918320279863 or +918931921131&gt;</h6>
     </CardContent>
     <CardContent>
     <MyButton
