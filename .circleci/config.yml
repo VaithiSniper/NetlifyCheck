@@ -1,11 +1,65 @@
 version: 2.1
 workflows:
-  testing:
+  sdi-site-deployment:
     jobs:
-      - runner-test
+      - build:
+          branches:
+            only: 
+              - master
+              - staging
+          context: 
+              - SDI
+      - deploy:
+          requires:
+          - build
+          branches:
+            only: master
+          context: 
+            - SDI
 jobs:
-  runner-test:
+  build:
     machine: true
     resource_class: vaithisniper/sdi
     steps:
-      - run: echo "Hi I'm on Runners!"
+      - checkout
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Build React App
+          command: npm run build
+      - save_cache:
+          key: app-build-cache-{{ .Branch }}
+          paths:
+            - ./build
+      - run: 
+          name: Build and Push Docker Image
+          command: |
+            echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+            docker build -t SDICLUB/sdi:sdi-site-frontend .
+            docker push sdiclub/sdi:sdi-site-frontend
+  deploy:
+    machine: true
+    resource_class: vaithisniper/sdi
+    steps:
+        - run:
+            name: Deploy Over SSH
+            command: |
+              ssh $SSH_USER@$SSH_HOST "docker pull "
+
+        - run:
+            name: Deploy Over SSH
+            command: |
+              ssh $SSH_USER@$SSH_HOST "echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin"
+              ssh $SSH_USER@$SSH_HOST "docker pull sdiclub/sdi:sdi-site-frontend"
+              ssh $SSH_USER@$SSH_HOST "docker run --name sdi-site -d -p 3000:3005 sdiclub/sdi:sdi-site-frontend"
+
