@@ -57,7 +57,7 @@ function PageContentPC() {
     variant="contained" 
     className="register" 
     size="sm"
-    ><Link to='/register'><img src={"img/group1.png"} alt="SDIlogo"></img></Link></Button>
+    ><a href='https://pages.razorpay.com/sdiclub'><img src={"img/group1.png"} alt="SDIlogo"></img></a></Button>
     </Grid>
     </Grid>
     </div>

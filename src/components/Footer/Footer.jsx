@@ -58,7 +58,7 @@ function FooterMobile(){
         </Grid>
         <Grid item sm={4} xs={4} align="center">
         <Paper className={classes.paper} elevation={0} style={{backgroundColor:"transparent",color:"white"}}>  
-        <a href="https://instagram.com/sdibangalorebit?utm_medium=copy_link" target="_blank" rel="noopener noreferrer"> 
+        <a href="https://www.instagram.com/sdi_bit/" target="_blank" rel="noopener noreferrer"> 
         <div className="insta"></div>
         </a>
         </Paper>

@@ -49,7 +49,7 @@ function PageContentMobile(){
     <MyButton
         variant="contained"
         size="large"
-        href="/register"
+        href="https://pages.razorpay.com/sdiclub"
         style={{color:"white"}}
         >
         Register

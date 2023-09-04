@@ -80,7 +80,7 @@ function App() {
             <Contact />
           </div>
         </Route>
-        <Route exact path='/register'>
+        {/* <Route exact path='/register'>
           <div
             className={
               !smallerThan1000
@@ -100,8 +100,8 @@ function App() {
             <PaymentPortal />
             <FootPayment />
           </div>
-        </Route>
-        <Route exact path='/terms'>
+        </Route> */}
+        {/* <Route exact path='/terms'>
           <div
             className={
               !smallerThan1000
@@ -110,8 +110,8 @@ function App() {
             }>
             <TandC />
           </div>
-        </Route>
-        <Route exact path='/payment/success'>
+        </Route> */}
+        {/* <Route exact path='/payment/success'>
           <div
             className={
               !smallerThan1000 ? "bg_image_payment" : "bg_image_payment_mobile"
@@ -119,7 +119,7 @@ function App() {
             <PaymentSuccess />
             <FootPayment />
           </div>
-        </Route>
+        </Route> */}
         {/* <Route exact path='/maintenance'>
           <div
             className={
